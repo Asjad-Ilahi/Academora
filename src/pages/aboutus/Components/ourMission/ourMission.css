@@ -1,0 +1,50 @@
+/* OurMission Styles */
+.our-mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .our-mission-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--paragraph-color);
+
+  }
+  
+  .our-mission-heading {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--bold-heading-color);
+  }
+  
+  .our-mission-paragraph {
+    color: var(--paragraph-color);
+  }
+  
+  .our-mission-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .our-mission-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    color: var(--primary-color);
+  }
+  
+  .our-mission-image {
+    position: relative;
+    height: 400px;
+  }
+  
+  .image-contain {
+    object-fit: contain;
+  }
+  

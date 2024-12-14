@@ -1,0 +1,42 @@
+/* WhoAreWe Styles */
+.who-are-we-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .who-are-we-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .who-are-we-heading {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--bold-heading-color);
+
+  }
+  
+  .highlight {
+    color: var(--primary-color); /* Purple color */
+  }
+  
+  .who-are-we-paragraph {
+    color: var(--paragraph-color);
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .who-are-we-image {
+    position: relative;
+    height: 400px;
+  }
+  
+  .image-contain {
+    object-fit: contain;
+  }
+  

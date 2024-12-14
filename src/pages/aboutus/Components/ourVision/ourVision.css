@@ -1,0 +1,39 @@
+/* OurVision Styles */
+.our-vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .our-vision-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .our-vision-heading {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--bold-heading-color);
+  }
+  
+  .our-vision-paragraph {
+    color: var(--paragraph-color);
+  }
+  
+  .highlight {
+    color: var(--primary-color);
+  }
+  
+  .our-vision-image {
+    position: relative;
+    height: 400px;
+  }
+  
+  .image-contain {
+    object-fit: contain;
+  }
+  

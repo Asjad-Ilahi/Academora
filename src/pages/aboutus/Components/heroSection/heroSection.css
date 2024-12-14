@@ -1,0 +1,41 @@
+/* Hero Styles */
+.hero-container {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../../../assets/about_us.svg') no-repeat center/cover;
+  background-size: cover; /* Ensures the SVG scales proportionally */
+  background-position: center;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.hero-heading {
+  font-size: 3rem; /* Equivalent to text-5xl */
+  font-weight: bold;
+}
+
+.highlight {
+  color: var(--primary-color); /* text-pink-400 */
+}
+
+.hero-paragraph {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 4rem; /* Equivalent to md:text-6xl */
+  }
+
+  .hero-paragraph {
+    font-size: 1.5rem; /* Equivalent to md:text-2xl */
+  }
+}

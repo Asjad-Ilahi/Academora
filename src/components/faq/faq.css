@@ -1,0 +1,108 @@
+/* General Styles */
+
+.accordion-wrapper {
+  outline: none;
+  max-width: 900px;
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
+}
+
+.accordion-item {
+  outline: none;
+  border-bottom: 0.1rem solid #ddd;
+  background-color: transparent;
+}
+
+.accordion-item.open {
+  outline: none;
+  background-color: #f9f9f9; /* Optional: Add background color when open */
+  border: none;
+}
+
+.accordion-trigger {
+  outline: none;
+  border: none; /* Remove border around the trigger */
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+  color: #333;
+}
+
+.accordion-trigger.active {
+  outline: none;
+  color: var(--primary-color); /* Add color when active */
+  border: none;
+  background-color: transparent;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.accordion-content {
+  outline: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border: none;
+  background-color: transparent;
+}
+
+.accordion-content.expanded {
+  outline: none;
+  max-height: 200px; /* Adjust as needed for content */
+  border: none;
+}
+
+.accordion-content-inner {
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  color: var(--paragraph-color);
+  border: none;
+  background-color: transparent;
+}
+
+/* FAQ Container Styles */
+.faq-container {
+  outline: none;
+  padding: 40px 20px;
+  border: none;
+}
+
+.faq-title {
+  outline: none;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.highlight {
+  outline: none;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: var(--primary-color);
+}
+
+.accordion-trigger {
+  border: none;
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Ensure no shadow */
+}
+
+.accordion-trigger:focus,
+.accordion-trigger:active,
+.accordion-trigger:focus-visible {
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Remove any residual shadows */
+}
