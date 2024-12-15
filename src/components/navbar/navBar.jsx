@@ -25,7 +25,7 @@ export function Navbar() {
               <Link to="/sign-in">Sign In</Link>
             </button>
             <button className="btn btn-primary">
-              <Link to="/sign-up">Sign Up</Link>
+              <Link to='sign-up'>Sign Up</Link>
             </button>
           </div>
         </div>
