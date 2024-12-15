@@ -2,10 +2,11 @@
 
 .accordion-wrapper {
   outline: none;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   border: none;
   background-color: transparent;
+  padding: 0 20px; /* Add padding for smaller screens */
 }
 
 .accordion-item {
@@ -84,7 +85,8 @@
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 24px;
-  text-align: center;
+  padding-left:40px;
+  text-align: left;
 }
 
 .highlight {
@@ -105,4 +107,60 @@
 .accordion-trigger:focus-visible {
   outline: none; /* Remove focus outline */
   box-shadow: none; /* Remove any residual shadows */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .accordion-trigger {
+    font-size:16px;
+  }
+  .accordion-wrapper {
+    padding:0px;
+    max-width: 100%;
+  }
+
+  .faq-title {
+    font-size: 28px;
+    padding-left:0px;
+    margin:0px;
+  }
+
+  .accordion-trigger {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .accordion-content-inner {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-trigger {
+    font-size:12px;
+  }
+  .accordion-wrapper{
+    padding:0px;
+    max-width:100%;
+  }
+  .faq-container {
+    padding: 20px 10px;
+  }
+
+  .faq-title {
+    font-size: 24px;
+    padding-left:0px;
+    margin:0px;
+  }
+
+  .accordion-trigger {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .accordion-content-inner {
+    font-size: 12px;
+    padding: 10px;
+  }
 }

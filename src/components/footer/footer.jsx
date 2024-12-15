@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
 import './footer.css'; // Import the CSS file
+import Logo from '../../assets/logo.svg';
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="footer-grid">
           <div className="footer-logo">
             <a href="/" className="footer-logo-a">
-              <img src="/placeholder.svg" alt="Academora Logo" width={32} height={32} />
+              <img src={Logo} alt="Academora Logo" width={32} height={32} />
               <span className="footer-logo-text">Academora</span>
             </a>
             <p className="footer-description">
@@ -19,19 +20,19 @@ export function Footer() {
 
           <div className="footer-help">
             <h3 className="footer-help-title">GET HELP</h3>
-            <ul className="footer-as">
+            <ul className="footer-links">
               <li>
-                <a href="/contact" className="footer-a">
+                <a href="/contact" className="footer-link">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="/articles" className="footer-a">
+                <a href="/articles" className="footer-link">
                   Latest Articles
                 </a>
               </li>
               <li>
-                <a href="/faq" className="footer-a">
+                <a href="/faq" className="footer-link">
                   FAQ
                 </a>
               </li>
@@ -46,26 +47,26 @@ export function Footer() {
               <p>Mail: support@academora.com</p>
             </div>
             <div className="footer-socials">
-              <a href="#" className="footer-social-a">
+              <a href="#" className="footer-social-link">
                 <Facebook className="footer-icon" />
               </a>
-              <a href="#" className="footer-social-a">
+              <a href="#" className="footer-social-link">
                 <Twitter className="footer-icon" />
               </a>
-              <a href="#" className="footer-social-a">
+              <a href="#" className="footer-social-link">
                 <Instagram className="footer-icon" />
               </a>
-              <a href="#" className="footer-social-a">
+              <a href="#" className="footer-social-link">
                 <Youtube className="footer-icon" />
               </a>
-              <a href="#" className="footer-social-a">
-                <aedin className="footer-icon" />
+              <a href="#" className="footer-social-link">
+                <Linkedin className="footer-icon" />
               </a>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>Copyright © 2024 LearnPress LMS | Powered by ThumPress</p>
+          <p>Copyright © 2024 Academora | Powered by ThumPress</p>
         </div>
       </div>
     </footer>

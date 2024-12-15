@@ -96,7 +96,7 @@ export function FAQ() {
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>
-            What Are The <span className="highlight">Guidelines</span> That One Needs To Follow?
+            What Are The <span className="highlight">Guidelines</span> To be Followed?
           </AccordionTrigger>
           <AccordionContent>
             Our guidelines ensure respectful interaction and maintain a productive learning environment.
