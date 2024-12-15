@@ -20,6 +20,7 @@
 .hero-heading {
   font-size: 3rem; /* Equivalent to text-5xl */
   font-weight: bold;
+  color: #fff;
 }
 
 .highlight {
