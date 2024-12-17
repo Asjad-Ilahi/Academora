@@ -7,6 +7,7 @@ import { OurVision } from './Components/ourVision/ourVision';
 import { OurMission } from './Components/ourMission/ourMission';
 import { FAQ } from '../../components/faq/faq';
 import { Footer } from '../../components/footer/footer';
+import ChatBot from '../../components/ai/ai';
 
 import './aboutUs.css'; // Import the CSS file
 
@@ -14,6 +15,7 @@ export default function AboutUs() {
   return (
     <div className="about-us-container">
       <Navbar />
+      <ChatBot/>
       <main className="main-content">
         <Hero />
         <WhoAreWe />

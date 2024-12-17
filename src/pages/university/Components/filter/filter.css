@@ -1,0 +1,62 @@
+.filter-section {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+
+  }
+  .filter-section select{
+    background-color: white;
+    color: #666;
+  }
+  .filter-group {
+    margin-bottom: 15px;
+  }
+  
+  .filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  .filter-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    appearance: none; /* Remove default checkbox styles */
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #666;; /* Thinner border */
+    border-radius: 3px; /* Optional: rounded corners */
+    background-color: white; /* White box background */
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .checkbox-group input[type="checkbox"]:checked {
+    border-color: var(--primary-color); /* Change border to purple */
+  }
+  
+  .checkbox-group input[type="checkbox"]:checked::before {
+    content: "✓"; /* Checkmark symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the tick */
+    font-size: 12px;
+    color: var(--primary-color); /* Tick color */
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+  }
+  
+  
+  

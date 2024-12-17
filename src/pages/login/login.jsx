@@ -93,7 +93,7 @@ export function LoginForm() {
           </button>
 
           <p className="signup-link">
-            Don't have an account? <a href="/signup">Sign up for free!</a>
+            Don't have an account? <a href="/sign-up">Sign up for free!</a>
           </p>
         </form>
       </div>

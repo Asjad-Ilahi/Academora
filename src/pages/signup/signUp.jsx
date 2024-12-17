@@ -99,7 +99,7 @@ export function SignUpForm() {
           </button>
 
           <p className="login-link">
-            Already have an account? <a href="/login">Log-in</a>
+            Already have an account? <a href="/sign-in">Log-in</a>
           </p>
         </form>
       </div>

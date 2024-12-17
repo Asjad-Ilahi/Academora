@@ -1,0 +1,90 @@
+import React from 'react';
+import './filter.css';
+
+export function FilterSection() {
+  return (
+    <div className="filter-section">
+      <div className="filter-header">
+        <h3>Filter</h3>
+      </div>
+      
+      <div className="filter-group">
+        <label>City</label>
+        <select defaultValue="">
+          <option value="">All cities</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Study level</label>
+        <select defaultValue="">
+          <option value="">All study levels</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Study field</label>
+        <select defaultValue="">
+          <option value="">All study fields</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Type</label>
+        <select defaultValue="">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Employees</label>
+        <select defaultValue="">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Teachers</label>
+        <select defaultValue="">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Students</label>
+        <select defaultValue="">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div className="filter-group">
+        <label>Foreigners percentage</label>
+        <select defaultValue="">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div className="checkbox-group">
+        <label>
+          <input type="checkbox" /> Hostels
+        </label>
+        <label>
+          <input type="checkbox" /> Financial aid
+        </label>
+        <label>
+          <input type="checkbox" /> Exchange programs
+        </label>
+        <label>
+          <input type="checkbox" /> Sport facilities
+        </label>
+        <label>
+          <input type="checkbox" /> Distance learning
+        </label>
+        <label>
+          <input type="checkbox" /> Foreigners
+        </label>
+      </div>
+    </div>
+  );
+}
+
