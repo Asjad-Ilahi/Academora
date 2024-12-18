@@ -18,6 +18,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Remove all focus outlines globally */
+*:focus, *:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .highlight{
   color: var(--primary-color);
 }

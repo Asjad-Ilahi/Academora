@@ -33,7 +33,7 @@
   
   .chat-window {
     width: 380px;
-    height: 600px;
+    height: 80vh;
     background: white;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -43,7 +43,7 @@
   }
   
   .chat-header {
-    padding: 20px;
+    padding: 0px 10px;
     background: var(--primary-color);
     color: white;
     font-weight: bold;
@@ -52,7 +52,7 @@
     align-items: center;
   }
   
-  .close-button {
+  .chat-header .close-button {
     background: none;
     border: none;
     color: white;
@@ -61,7 +61,8 @@
     transition: opacity 0.2s;
   }
   
-  .close-button:hover {
+  .chat-header .close-button:hover {
+    color: white;
     opacity: 0.8;
   }
   
@@ -228,9 +229,10 @@
 /* Cloud shape */
 .thinking-cloud {
     position: absolute;
+    stroke: #000;
     top: -50px;
     left: 20px;  /* Position it on the left side */
-    background: linear-gradient(145deg, #d1b3ff, #a674f1);
+    background: linear-gradient(145deg, #d1b3ff, var(--primary-color));
     color: white;
     border-radius: 50% 50% 40% 40%; /* Cloud-like shape */
     padding: 10px 20px;
@@ -279,8 +281,10 @@
     left: 20px;
     width: 12px;
     height: 12px;
-    background: #d1b3ff;
+    background: white;
     border-radius: 50%;
+    stroke: #000;
+    stroke-width: 2px;
     animation: ballAppear 1s forwards;
   }
   
@@ -292,7 +296,9 @@
     left: 20px;
     width: 20px;
     height: 20px;
-    background: #d1b3ff;
+    background: white;
+    stroke: #000;
+    stroke-width: 2px;
     border-radius: 50%;
     animation: ballAppear 1s 0.5s forwards; /* Delay the second ball */
   }

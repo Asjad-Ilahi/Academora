@@ -63,27 +63,6 @@ export function FilterSection() {
           <option value="">Any</option>
         </select>
       </div>
-
-      <div className="checkbox-group">
-        <label>
-          <input type="checkbox" /> Hostels
-        </label>
-        <label>
-          <input type="checkbox" /> Financial aid
-        </label>
-        <label>
-          <input type="checkbox" /> Exchange programs
-        </label>
-        <label>
-          <input type="checkbox" /> Sport facilities
-        </label>
-        <label>
-          <input type="checkbox" /> Distance learning
-        </label>
-        <label>
-          <input type="checkbox" /> Foreigners
-        </label>
-      </div>
     </div>
   );
 }

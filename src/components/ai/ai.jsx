@@ -4,11 +4,7 @@ import '../ai/ai.css';
 import Robot from '../../assets/robot.svg';
 import UserImage from '../../assets/women_avatar.svg';
 
-
-console.log(import.meta.env.VITE_AI_API_KEY);
-
 const API_KEY = import.meta.env.VITE_AI_API_KEY;
-
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
