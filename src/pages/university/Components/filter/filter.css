@@ -12,6 +12,18 @@
   color: var(--bold-heading-color)
 }
 
+.filter-header{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.filterImage{
+  padding-left: 12px;
+  height: 25px;
+  width: 25px;
+}
+
 .filter-group {
   margin-bottom: 15px;
 }

@@ -14,7 +14,7 @@ export function UniversityCard({
     <div className={`university-card-wrapper ${isExpanded ? 'expanded' : ''}`}>
       <div className="university-card">
         <div className="card-image">
-          <img src={image} alt={name} onError={(e) => (e.target.src = {UniPlaceholder})}/>
+          <img src={image} alt={name} onError={(e) => (e.target.src = UniPlaceholder)}/>
         </div>
         <div className="card-content">
           <h3>{name}</h3>

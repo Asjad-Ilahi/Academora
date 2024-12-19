@@ -4,7 +4,7 @@ import './heroSection.css'; // Import the CSS file
 
 export function Hero() {
   return (
-    <div className="hero-container">
+    <div className="about-us-hero-container">
       <div className="hero-content">
         <h1 className="hero-heading">
           About <span className="highlight">US</span>

@@ -3,11 +3,11 @@
   align-items: center; /* Centers content vertically */
   background-color: #1a1a1a;
   color: white;
-  padding: 60px 0;
   padding-bottom: 0px;
 }
 
 .heroContent {
+  margin-top: 0;
   flex: 1;
   padding: 0 25px;
   display: flex;
@@ -42,6 +42,7 @@
 }
 
 .hero-para p {
+  color: var(--hero-paragraph);
   letter-spacing: 0.8px; /* Added subtle letter spacing to paragraphs */
 }
 

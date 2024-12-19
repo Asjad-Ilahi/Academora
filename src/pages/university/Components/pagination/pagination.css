@@ -34,8 +34,8 @@
 }
 
 .page-item button:hover:not(:disabled) {
-  background-color: var(--hover-color);
-  color: green;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .page-item button:disabled {
