@@ -21,26 +21,64 @@ export default function Universities() {
     intl_students: "",
     subjects: "",
   });
+  const [searchResults, setSearchResults] = useState(universityData);
 
   const universitiesPerPage = 6;
 
-  // Filter universities based on selected filters
-  const filteredUniversities = universityData.filter((uni) => {
+  const cleanSubjectName = (subject) => {
+    return subject.replace(/\d+.*$/, '').trim();
+  };
+
+  const cleanNumber = (value) => {
+    if (typeof value === 'string') {
+      return parseInt(value.trim(), 10); // Trim spaces before parsing
+    }
+    return value;
+  };
+
+  const filteredUniversities = searchResults.filter((uni) => {
+    const cleanSubjects = uni.subjects.map(subject => cleanSubjectName(subject));
+    const uniRank = cleanNumber(uni.rank);
+  
     return (
-      (!filters.rank || uni.rank === filters.rank) &&
-      (!filters.number_students || uni.number_students === filters.number_students) &&
-      (!filters.intl_students || uni.intl_students === filters.intl_students) &&
-      (!filters.subjects || uni.subjects.includes(filters.subjects))
+      (!filters.rank || 
+        (parseInt(uniRank) >= filters.rank.min && 
+         parseInt(uniRank) <= filters.rank.max)) &&
+      (!filters.countries?.length || filters.countries.includes(uni.country)) &&
+      (!filters.subjects?.length || 
+        filters.subjects.some(filterSubject => 
+          cleanSubjects.some(uniSubject => 
+            uniSubject.toLowerCase() === filterSubject.toLowerCase()
+          )
+        )) &&
+      (!filters.intl_students || 
+        (parseInt(uni.intl_students) >= filters.intl_students.min && 
+         parseInt(uni.intl_students) <= filters.intl_students.max)) &&
+      (!filters.number_students || 
+        (parseInt(uni.number_students) >= filters.number_students.min && 
+         parseInt(uni.number_students) <= filters.number_students.max)) &&
+      (!filters.overall_score || 
+        (parseFloat(uni.overall_score) >= filters.overall_score.min && 
+         parseFloat(uni.overall_score) <= filters.overall_score.max)) &&
+      (!filters.research_score || 
+        (parseFloat(uni.research_score) >= filters.research_score.min && 
+         parseFloat(uni.research_score) <= filters.research_score.max)) &&
+      (!filters.teaching_score || 
+        (parseFloat(uni.teaching_score) >= filters.teaching_score.min && 
+         parseFloat(uni.teaching_score) <= filters.teaching_score.max))
     );
   });
 
-  // Pagination indices
   const indexOfLastUniversity = currentPage * universitiesPerPage;
   const indexOfFirstUniversity = indexOfLastUniversity - universitiesPerPage;
   const currentUniversities = filteredUniversities.slice(indexOfFirstUniversity, indexOfLastUniversity);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleSearchResults = (filteredData) => {
+    setSearchResults(filteredData);
+    setCurrentPage(1); // Reset to the first page on new search
+  };
 
   return (
     <div className="universities-page">
@@ -49,14 +87,17 @@ export default function Universities() {
       <div className="search-container">
         <FilterSection filters={filters} setFilters={setFilters} />
         <div className="search-results">
-          <SearchBar />
+          <SearchBar
+            universities={universityData}
+            onFilteredUniversities={handleSearchResults}
+          />
           <div className="universities-grid">
             {currentUniversities.map((university, index) => (
               <UniversityCard
                 key={index}
                 name={university.name}
                 description={university.description}
-                image={university.image_url ? university.image_url : Placeholder} // Use default image if null
+                image={university.image_url ? university.image_url : Placeholder}
                 isExpanded={expandedCard === university.name}
                 onExpand={() => setExpandedCard(university.name)}
                 onCollapse={() => setExpandedCard(null)}
