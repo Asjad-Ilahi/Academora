@@ -1,5 +1,7 @@
 import React from 'react'
 import './announcements.css'
+import Comsats from '../../../assets/ComsatsUniversity.svg'
+import Nust from '../../../assets/NUSTuniversity.svg'
 
 export function Announcements() {
   const announcements = [
@@ -7,14 +9,14 @@ export function Announcements() {
       university: "NUST University",
       title: "Admission",
       status: "Open",
-      image: "/nust.jpg",
+      image: Nust, // Imported image
       date: "27-11-24"
     },
     {
       university: "COMSATS University",
       title: "Admission",
       status: "Open",
-      image: "/comsats.jpg",
+      image: Comsats, // Imported image
       date: "19-12-24"
     }
   ]
@@ -28,11 +30,14 @@ export function Announcements() {
       <div className="announcements-grid">
         {announcements.map((announcement, index) => (
           <div key={index} className="announcement-card">
-            <img 
-              src={announcement.image} 
-              alt={announcement.university}
-              className="announcement-image"
-            />
+            <div className="announcement-image-container">
+              <img 
+                src={announcement.image} 
+                alt={announcement.university}
+                className="announcement-image"
+              />
+              <div className="announcement-overlay"></div> {/* Dark overlay */}
+            </div>
             <div className="announcement-content">
               <h3>{announcement.university}</h3>
               <p>
@@ -47,4 +52,3 @@ export function Announcements() {
     </section>
   )
 }
-
