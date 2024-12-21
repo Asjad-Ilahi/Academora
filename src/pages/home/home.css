@@ -10,7 +10,7 @@
   .announcements-section {
     padding: 3rem 2rem;
   }
-
+  
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
