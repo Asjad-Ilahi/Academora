@@ -7,6 +7,7 @@ import { SearchBar } from './Components/search/search';
 import { UniversityCard } from './Components/universityCard/universityCard';
 import { Pagination } from './Components/pagination/pagination';
 import { JoinSociety } from './Components/joinSociety/joinSociety';
+import  ChatBot from '../../components/ai/ai';
 import './university.css';
 import universityData from '../../assets/updated_universities.json';
 import Placeholder from '../../assets/university_placeholder.png';
@@ -99,6 +100,7 @@ export default function Universities() {
   return (
     <div className="universities-page">
       <Navbar />
+      <ChatBot/>
       <HeroSection />
       <div className="search-container">
         {!isMobile && <FilterSection filters={filters} setFilters={setFilters} className="filter-section" />}
