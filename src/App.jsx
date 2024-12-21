@@ -4,11 +4,12 @@ import Universities from './pages/university/university';
 import { SignUpForm } from './pages/signup/signUp';
 import { LoginForm } from './pages/login/login';
 import Home from './pages/home/home';
+import UniversityDetail from './pages/universityDetail/universityDetail';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<UniversityDetail />} />
       <Route path="/universities" element={<Universities />} />
         <Route path='/sign-up' element ={<SignUpForm/>} />
         <Route path='/sign-in' element = {<LoginForm/>} />

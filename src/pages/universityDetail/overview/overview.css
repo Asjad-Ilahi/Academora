@@ -1,0 +1,82 @@
+.overview {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.overview h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.overview-text {
+    display: flex;
+    gap: 20px;
+}
+
+.description-bar {
+    width: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.overview-text p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Two cards per row */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Adjust the gap between cards */
+}
+
+.stat-box {
+    background-color: #f5f5f5; /* Light grey background */
+    width: 300px; /* Adjusted width */
+    height: 130px; /* Adjusted height */
+    padding: 20px;
+    border-radius: 12px;
+    display: flex; /* Flex layout for icon and text */
+    align-items: center; /* Center vertically */
+    border: 1px solid #ccc;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.stat-icon {
+    font-size: 48px; /* Larger icon size */
+    margin-right: 20px; /* Space between icon and text */
+    color: var(--primary-color);
+}
+
+.stat-details {
+    text-align: left; /* Align text to the left */
+}
+
+.stat-label {
+    color: #666;
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 22px; /* Increased font size for values */
+    font-weight: bold;
+    color: var(--primary-color);
+}
