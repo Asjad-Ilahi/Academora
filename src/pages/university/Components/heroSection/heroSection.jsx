@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="hero-text">
           <div className="vertical-line"></div>
           <div className='hero-para'>
-            <p>We have the most complete database of universities more than 30</p>
+            <p>We have the most complete database of universities more than 1300</p>
             <p>Our search will help you find universities based on various criteria, including cities, degrees offered, and program costs.</p>
           </div>
         </div>

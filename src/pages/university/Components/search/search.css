@@ -1,7 +1,7 @@
 .search-bar {
     display: flex;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
 .search-bar input {

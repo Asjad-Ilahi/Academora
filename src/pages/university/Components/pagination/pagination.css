@@ -51,3 +51,15 @@
   font-size: 1em;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .pagination {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .page-item button {
+    padding: 4px 8px;
+    font-size: 0.875em;
+  }
+}

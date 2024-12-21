@@ -1,3 +1,8 @@
+/* Desktop Filter */
+.desktop-filter {
+  display: block;
+}
+
 .filter-section {
   width: 300px;
   background: white;
@@ -12,7 +17,7 @@
 
 .filter-header {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
   border-bottom: 2px solid #f0f0f0;
@@ -26,21 +31,20 @@
   color: #333;
 }
 
+.filter-icon {
+  color: #666;
+}
+
 .filter-content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-}
-
-.filterImage{
-  padding-left: 18px;
-  height: 25px;
-  width: 25px;
+  gap: 20px;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .filter-group label {
@@ -50,12 +54,7 @@
   text-transform: uppercase;
 }
 
-.range-slider-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* Range inputs */
 .range-inputs {
   display: flex;
   align-items: center;
@@ -84,27 +83,16 @@
   font-size: 0.875rem;
 }
 
-.range-slider {
-  height: 4px;
-  background-color: #e0e0e0;
-  border-radius: 2px;
-  position: relative;
-  margin: 8px 0;
+.percent-sign {
+  color: #333;
+  font-size: 0.875rem;
 }
 
-.range-progress {
-  position: absolute;
-  height: 100%;
-  background-color: var(--primary-color);
-  border-radius: 2px;
-  transition: all 0.2s ease;
-}
-
+/* Select styles */
 .select-input {
   width: 100%;
 }
 
-/* Custom styles for react-select */
 .select__control {
   border-color: #ddd !important;
   box-shadow: none !important;
@@ -114,10 +102,6 @@
 
 .select__control:hover {
   border-color: #bbb !important;
-}
-
-.percent-sign{
-  color: #333;
 }
 
 .select__control--is-focused {
@@ -158,14 +142,7 @@
   color: var(--primary-color) !important;
 }
 
-.select__single-value {
-  color: #333 !important;
-}
-
-.select__placeholder {
-  color: #999 !important;
-}
-
+/* Reset button */
 .reset-button {
   width: 100%;
   padding: 12px;
@@ -181,8 +158,7 @@
 }
 
 .reset-button:hover {
-  background-color: var(--primary-color);
-  opacity: 0.8;
+  opacity: 0.9;
   transform: translateY(-1px);
 }
 
@@ -190,18 +166,134 @@
   transform: translateY(0);
 }
 
-/* Enhanced scrollbar */
-.filter-section::-webkit-scrollbar {
+/* Mobile styles */
+.mobile-filter {
+  display: none;
+  color: #333;
+}
+
+.mobile-filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.filter-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 360px;
+  background: white;
+  z-index: 1000;
+  padding: 24px;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar styles */
+.filter-section::-webkit-scrollbar,
+.filter-modal::-webkit-scrollbar {
   width: 10px;
 }
 
-.filter-section::-webkit-scrollbar-track {
+.filter-section::-webkit-scrollbar-track,
+.filter-modal::-webkit-scrollbar-track {
   background: #f5f5f5;
   border-radius: 8px;
 }
 
-.filter-section::-webkit-scrollbar-thumb {
+.filter-section::-webkit-scrollbar-thumb,
+.filter-modal::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, var(--primary-color), #c5abda);
   border-radius: 8px;
   border: 2px solid #f5f5f5;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .desktop-filter {
+    display: none;
+  }
+  
+  .mobile-filter {
+    display: block;
+  }
+
+  .filter-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-section {
+    width: 100%;
+  }
+
+  .mobile-filter-button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

@@ -154,3 +154,31 @@
     transform: translate(-50%, 0);
   }
 }
+
+@media (max-width: 768px) {
+  .university-card {
+    height: auto; /* Allow card height to adjust based on content */
+  }
+
+  .card-image {
+    height: 180px; /* Adjust image height for smaller screens */
+  }
+
+  .card-content {
+    height: auto; /* Allow content height to adjust based on content */
+  }
+}
+
+@media (max-width: 480px) {
+  .university-card {
+    height: auto; /* Allow card height to adjust based on content */
+  }
+
+  .card-image {
+    height: 150px; /* Adjust image height for smaller screens */
+  }
+
+  .card-content {
+    height: auto; /* Allow content height to adjust based on content */
+  }
+}
