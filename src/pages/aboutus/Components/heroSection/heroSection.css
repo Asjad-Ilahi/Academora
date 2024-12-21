@@ -11,11 +11,10 @@
   background-position: center;
 }
 
-.hero-content {
+.about-us-hero-content {
   position: relative;
   text-align: center;
   color: white;
-  padding: 0 1rem;
 }
 
 .hero-heading {
