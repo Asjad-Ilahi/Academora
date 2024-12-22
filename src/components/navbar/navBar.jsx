@@ -4,7 +4,7 @@ import logo from '../../assets/logo.svg'; // Adjust path to match your folder st
 
 import './navBar.css';
 
-export function Navbar() {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

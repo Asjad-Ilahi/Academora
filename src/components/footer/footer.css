@@ -1,23 +1,30 @@
 /* Footer.css */
-
+/* Footer.css */
 .footer {
-  background: #f2f0f0; /* Clean and light background color */
-  color: #333; /* Darker text for readability */
-  padding: 20px 40px;
+  background: #f2f0f0;
+  color: #333;
+  padding: 20px 0; /* Changed to remove horizontal padding */
   font-family: Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px); /* Softer blur for subtle glassy effect */
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0; /* Remove any margin */
+  width: 100vw; /* Use viewport width */
+  box-sizing: border-box;
 }
 
 .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
+
 
 .footer-section {
   flex: 1;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './universityCard.css';
 import UniPlaceholder from '../../../../assets/university_placeholder.png';
 
@@ -10,8 +11,15 @@ export function UniversityCard({
   onExpand,
   onCollapse,
 }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (e) => {
+    e.stopPropagation();
+    navigate(`/universities/${name}`);
+  };
+
   return (
-    <div className={`university-card-wrapper ${isExpanded ? 'expanded' : ''}`}>
+    <div className={`university-card-wrapper ${isExpanded ? 'expanded' : ''}`} onClick={handleCardClick}>
       <div className="university-card">
         <div className="card-image">
           <img src={image} alt={name} onError={(e) => (e.target.src = UniPlaceholder)}/>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from '../../components/navbar/navBar';
-import { Footer } from '../../components/footer/footer';
+// import { Navbar } from '../../components/navbar/navBar';
+// import { Footer } from '../../components/footer/footer';
 import { HeroSection } from './Components/heroSection/heroSection';
 import { FilterSection } from './Components/filter/filter';
 import { SearchBar } from './Components/search/search';
@@ -100,7 +100,6 @@ export default function Universities() {
   return (
     <div className="universities-page">
       <Navbar />
-      <ChatBot/>
       <HeroSection />
       <div className="search-container">
         {!isMobile && <FilterSection filters={filters} setFilters={setFilters} className="filter-section" />}
@@ -134,7 +133,7 @@ export default function Universities() {
         </div>
       </div>
       <JoinSociety />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

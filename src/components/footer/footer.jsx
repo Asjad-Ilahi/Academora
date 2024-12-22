@@ -4,9 +4,9 @@ import './footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import Icon from '../../assets/logo.svg';
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer ">
       <div className="footer-container">
         <div className="footer-section logo-section">
           <img src={Icon} alt="Logo" className="footer-logo" />

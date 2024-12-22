@@ -27,11 +27,6 @@
   gap: 20px;
 }
 
-.description-bar {
-  width: 4px;
-  background-color: #8B3DFF;
-  border-radius: 2px;
-}
 
 .university-description p {
   color: #666;
@@ -47,5 +42,44 @@
 .university-logo img {
   width: 100%;
   height: auto;
-  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .university-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .university-text {
+    margin-bottom: 20px;
+  }
+
+  .university-description {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-bar {
+    display: none;
+  }
+
+  .university-logo {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .university-header h1 {
+    font-size: 24px;
+  }
+
+  .university-description p {
+    font-size: 14px;
+  }
+
+  .university-logo {
+    max-width: 100px;
+  }
 }
