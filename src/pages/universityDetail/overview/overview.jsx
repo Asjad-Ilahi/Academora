@@ -1,49 +1,45 @@
 import React from 'react';
 import './Overview.css';
 
-const Overview = () => {
+const Overview = ({ university }) => {
   return (
     <div className="overview">
       <h2>Overview</h2>
       <div className="overview-content">
         <div className="overview-text">
-          <div className="description-bar"></div>
           <p>
-            Established in 1998, CUI has grown into a Multi-Campus University 
-            offering Cutting-Edge Programs in Engineering, Computer Sciences, 
-            Management, and Social Sciences. With a Strong Emphasis On 
-            Fostering Critical Thinking And Innovation, COMSATS Ranks Among 
-            The Top Universities In Pakistan And Asia, Known For Its Culture By 
-            Producing Skilled Graduates And Groundbreaking Research.
+            Our university is committed to fostering excellence in education, research, and innovation. We strive to create an inclusive environment where students from all backgrounds can thrive and achieve their academic and professional aspirations.
           </p>
         </div>
+
+        {/* Stats grid */}
         <div className="stats-grid">
-          <div className="stat-box">
-            <div className="stat-icon">📅</div>
-            <div className="stat-details">
-              <div className="stat-label">Established Year</div>
-              <div className="stat-value">1998</div>
-            </div>
-          </div>
           <div className="stat-box">
             <div className="stat-icon">👥</div>
             <div className="stat-details">
               <div className="stat-label">Total Students Enrolled</div>
-              <div className="stat-value">36000</div>
+              <div className="stat-value">{university.number_students}</div>
             </div>
           </div>
           <div className="stat-box">
             <div className="stat-icon">🏆</div>
             <div className="stat-details">
-              <div className="stat-label">Ranking in Pakistan</div>
-              <div className="stat-value">4th</div>
+              <div className="stat-label">Ranking</div>
+              <div className="stat-value">{university.rank}</div>
             </div>
           </div>
           <div className="stat-box">
             <div className="stat-icon">🌏</div>
             <div className="stat-details">
-              <div className="stat-label">Ranking in Asia</div>
-              <div className="stat-value">126</div>
+              <div className="stat-label">International Outlook Score</div>
+              <div className="stat-value">{university.international_outlook_score}</div>
+            </div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-icon">⭐</div>
+            <div className="stat-details">
+              <div className="stat-label">Overall Score</div>
+              <div className="stat-value">{university.overall_score}</div>
             </div>
           </div>
         </div>

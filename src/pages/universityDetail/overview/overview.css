@@ -1,3 +1,4 @@
+/* General Overview Section */
 .overview {
     max-width: 1200px;
     margin: 40px auto;
@@ -5,12 +6,13 @@
 }
 
 .overview h2 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Changed to primary color */
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
+/* Overview Content */
 .overview-content {
     display: flex;
     flex-direction: column;
@@ -19,64 +21,78 @@
 
 .overview-text {
     display: flex;
-    gap: 20px;
+    gap: 10px; /* Reduced gap between bar and paragraph */
+    align-items: flex-start; /* Align description bar with top of the paragraph */
+    text-align: left; /* Ensure text is left-aligned */
 }
 
-.description-bar {
-    width: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-}
 
 .overview-text p {
     color: #666;
     line-height: 1.6;
     font-size: 16px;
+    margin: 0; /* Remove default margin for alignment */
 }
 
+/* Aligning the content horizontally */
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Grid container for overview cards */
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto); /* Two cards per row */
-    justify-content: center; /* Center the cards horizontally */
-    gap: 20px; /* Adjust the gap between cards */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    column-gap: 10px; /* Reduced space between columns */
+    row-gap: 20px; /* Space between rows remains consistent */
+    justify-content: center; /* Center grid within the container */
+    align-items: center; /* Vertically center cards */
 }
 
+/* Overview card styled like course cards */
 .stat-box {
-    background-color: #f5f5f5; /* Light grey background */
-    width: 300px; /* Adjusted width */
-    height: 130px; /* Adjusted height */
+    background-color: #ffffff;
+    width: 320px; /* Fixed card width */
     padding: 20px;
-    border-radius: 12px;
-    display: flex; /* Flex layout for icon and text */
-    align-items: center; /* Center vertically */
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
     transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
+    border-color: var(--primary-color); /* Changed to primary color */
 }
 
+/* Adjusted icon style */
 .stat-icon {
-    font-size: 48px; /* Larger icon size */
-    margin-right: 20px; /* Space between icon and text */
-    color: var(--primary-color);
+    font-size: 36px; /* Same size as course icon */
+    margin-bottom: 8px;
+    background-color: #f9f9f9;
+    width: 60px; /* Larger icon container */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .stat-details {
-    text-align: left; /* Align text to the left */
+    text-align: center; /* Align text like course card */
 }
 
 .stat-label {
-    color: #666;
-    font-size: 20px; /* Increased font size */
     margin-bottom: 6px;
-    font-weight: 500;
+    font-size: 18px; /* Match course card font size */
+    font-weight: bold;
+    color: #333;
 }
 
 .stat-value {
-    font-size: 22px; /* Increased font size for values */
-    font-weight: bold;
-    color: var(--primary-color);
+    color: #666;
+    font-size: 16px; /* Match description font size */
 }

@@ -2,18 +2,18 @@ import React from 'react'
 import { Hero } from './hero/hero'
 import { Features } from './features/features'
 import { Announcements } from './announcements/announcements'
-import { Footer } from '../../components/footer/footer'
-import { Navbar } from '../../components/navbar/navBar'
+// import { Footer } from '../../components/footer/footer'
+// import { Navbar } from '../../components/navbar/navBar'
 import './home.css'
 
 export default function Home() {
   return (
     <div className="home-container">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Features />
       <Announcements />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

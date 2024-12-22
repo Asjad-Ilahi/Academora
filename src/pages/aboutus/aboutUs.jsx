@@ -14,7 +14,7 @@ import './aboutUs.css'; // Import the CSS file
 export default function AboutUs() {
   return (
     <div className="about-us-container">
-      <Navbar />
+      {/* <Navbar /> */}
       <ChatBot/>
       <main className="main-content">
         <Hero />
@@ -23,7 +23,7 @@ export default function AboutUs() {
         <OurVision />
         <FAQ />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

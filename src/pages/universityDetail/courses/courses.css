@@ -17,11 +17,7 @@
     margin-bottom: 40px;
 }
 
-.description-bar {
-    width: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-}
+
 
 .courses-description p {
     color: #666;
@@ -75,4 +71,9 @@
 .course-info p {
     color: #666;
     font-size: 16px; /* Adjusted for visibility */
+}
+
+/* Style for message when no courses are available */
+.courses h2 {
+    color: var(--primary-color);
 }
