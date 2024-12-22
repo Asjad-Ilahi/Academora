@@ -99,7 +99,6 @@ export default function Universities() {
 
   return (
     <div className="universities-page">
-      <Navbar />
       <HeroSection />
       <div className="search-container">
         {!isMobile && <FilterSection filters={filters} setFilters={setFilters} className="filter-section" />}

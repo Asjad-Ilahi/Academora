@@ -1,28 +1,41 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import AboutUs from './pages/aboutus/aboutUs';
 import Universities from './pages/university/university';
 import { SignUpForm } from './pages/signup/signUp';
 import { LoginForm } from './pages/login/login';
 import Home from './pages/home/home';
 import UniversityDetail from './pages/universityDetail/universityDetail';
-import Navbar from './components/navbar/navBar';  // Import Navbar
-import Footer from './components/footer/footer';  // Corrected import for Footer
+import Explore from './pages/explore/explore';
+import Navbar from './components/navbar/navBar';
+import Footer from './components/footer/footer';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hideNavAndFooter = ['/sign-up', '/sign-in'].includes(location.pathname);
+
   return (
-    <BrowserRouter>
-      <Navbar />  {/* Place Navbar here */}
+    <>
+      {!hideNavAndFooter && <Navbar />}
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/universities" element={<Universities />} />
         <Route path="/universities/:name" element={<UniversityDetail />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/sign-in" element={<LoginForm />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
 
-      <Footer />  {/* Place Footer here */}
+      {!hideNavAndFooter && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
