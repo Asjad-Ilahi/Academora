@@ -1,0 +1,57 @@
+.sidebar {
+  max-height: 100vh; /* Ensure it doesn't overflow the viewport */
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0; /* This makes it sticky at the top */
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.sidebar h2 {
+  margin-top: 10vh;
+  margin-bottom: 20px;
+  color: #8e44ad;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-item.active {
+  background-color: #f0f0f0;
+  color: #8e44ad;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Make it full-width for smaller screens */
+    position: fixed; /* Optionally make it fixed instead of sticky */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top */
+  }
+}

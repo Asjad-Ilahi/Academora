@@ -1,0 +1,22 @@
+
+.explore {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-main-container {
+  margin-top: 9vh;
+  display: flex;
+  gap: 20px;
+  background-color: white;
+}
+
+
+.button-primary {
+  background-color: #8e44ad;
+  color: white;
+}
+
+
+
