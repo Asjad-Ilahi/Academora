@@ -81,9 +81,17 @@
     font-size: 14px;
   }
 
-  .colorful-shapes {
-    left: 0;
-    opacity: 0.3;
+  .colorful-shapes::before {
+    content: '';
+    inset: 0;
+    width: 250px;
+    height: 250px;
+    background: url('../../../../assets/blocks.svg') no-repeat center right;
+    background-size: contain;
+    opacity: 0.6;
+    display: flex;
+    justify-content: right;
+    align-items: right;
   }
 }
 

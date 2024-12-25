@@ -12,7 +12,6 @@ import './aboutUs.css'; // Import the CSS file
 export default function AboutUs() {
   return (
     <div className="about-us-container">
-      <ChatBot/>
       <main className="main-content">
         <Hero />
         <WhoAreWe />

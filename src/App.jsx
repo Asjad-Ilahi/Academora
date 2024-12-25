@@ -8,6 +8,8 @@ import UniversityDetail from './pages/universityDetail/universityDetail';
 import Explore from './pages/explore/explore';
 import Navbar from './components/navbar/navBar';
 import Footer from './components/footer/footer';
+import ChatBot from './components/ai/ai';
+import ScrollToTop from './components/scrollToTop'; // import ScrollToTop
 
 function AppContent() {
   const location = useLocation();
@@ -15,6 +17,8 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop /> {/* Add ScrollToTop component */}
+
       {!hideNavAndFooter && <Navbar />}
       
       <Routes>
@@ -27,6 +31,7 @@ function AppContent() {
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
 
+      {!hideNavAndFooter && <ChatBot />}
       {!hideNavAndFooter && <Footer />}
     </>
   );

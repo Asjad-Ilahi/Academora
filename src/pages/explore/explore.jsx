@@ -1,7 +1,6 @@
 import React from 'react';
 import Sidebar from './components/sideBar/sidebar';
 import MainContent from './components/mainContent/mainContent';
-import ChatBot from '../../components/ai/ai';
 import './explore.css';
 
 function Explore() {
@@ -11,7 +10,6 @@ function Explore() {
         <Sidebar />
         <MainContent />
       </main>
-      <ChatBot />
     </div>
   );
 }

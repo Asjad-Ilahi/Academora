@@ -64,12 +64,7 @@
 }
 
 .nav-link:hover {
-  color: #111827;
-}
-
-.about-link {
   color: var(--primary-color);
-  font-weight: 500;
 }
 
 .navbar-buttons {
@@ -114,6 +109,14 @@
   text-decoration: none;
   color: inherit;
 }
+
+.nav-link.active-link {
+  font-weight: bold;
+  color: var(--primary-color); /* Change to the desired active color */
+  border-bottom: 2px solid var(--primary-color); /* Optional: Add an underline for active state */
+}
+
+
 
 .btn-ghost {
   background-color: transparent;

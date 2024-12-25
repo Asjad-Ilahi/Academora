@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.svg'; // Adjust path to match your folder structure
 
 import './navBar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Get the current location
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,6 +26,8 @@ export default function Navbar() {
     };
   }, []);
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -39,16 +42,32 @@ export default function Navbar() {
           </Link>
 
           <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-            <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/"
+              className={`nav-link ${isActive('/') ? 'active-link' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link to="/universities" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/universities"
+              className={`nav-link ${isActive('/universities') ? 'active-link' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Universities
             </Link>
-            <Link to="/explore" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/explore"
+              className={`nav-link ${isActive('/explore') ? 'active-link' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Explore
             </Link>
-            <Link to="/about-us" className="nav-link about-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/about-us"
+              className={`nav-link about-link ${isActive('/about-us') ? 'active-link' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               About Us
             </Link>
           </div>
