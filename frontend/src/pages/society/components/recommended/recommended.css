@@ -18,7 +18,3 @@
   display: flex;
   gap: 10px;
 }
-
-.join-button:hover {
-  background: #7029FF;
-}
