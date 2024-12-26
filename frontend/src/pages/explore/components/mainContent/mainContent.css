@@ -6,36 +6,6 @@
   color: var(--paragraph-color);
 }
 
-.venture-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
-  gap: 20px;
-  flex-flow: row-reverse;
-}
-
-.venture-title {
-  z-index: 1;
-  font-size: 32px;
-  color: #8e44ad;
-}
-
-.venture-graphics {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-search {
-  margin-bottom: 12px;
-  max-width: 600px;
-  display: flex;
-  justify-content: right;
-  align-items: end;
-}
-
 .main-university-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

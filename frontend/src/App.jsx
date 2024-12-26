@@ -16,14 +16,14 @@ import EmailVerificationPage from './pages/emailVerification/emailVerification';
 
 function AppContent() {
   const location = useLocation();
-  const hideNavAndFooter = ['/sign-up', '/sign-in',"/emailVerification"].includes(location.pathname);
+  const hideNavAndFooter = ['/sign-up', '/sign-in', "/emailVerification"].includes(location.pathname);
 
   return (
     <>
-      <ScrollToTop /> 
+      <ScrollToTop />
 
       {!hideNavAndFooter && <Navbar />}
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/universities" element={<Universities />} />
@@ -32,9 +32,9 @@ function AppContent() {
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/sign-in" element={<LoginForm />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/society" element={<Society />} /> 
-        <Route path="/emailVerification" element={<EmailVerificationPage />} /> 
-        <Route path="/study-circles" element={<StudCircle />} /> 
+        <Route path="/society" element={<Society />} />
+        <Route path="/emailVerification" element={<EmailVerificationPage />} />
+        <Route path="/study-circles" element={<StudCircle />} />
       </Routes>
 
       {!hideNavAndFooter && <ChatBot />}

@@ -1,18 +1,23 @@
 .sidebar {
-  max-height: 100vh; /* Ensure it doesn't overflow the viewport */
+  max-height: 100vh;
+  /* Ensure it doesn't overflow the viewport */
   width: 250px;
   background-color: white;
-  padding: 20px;
+  padding-left: 20px;
   position: sticky;
-  top: 0; /* This makes it sticky at the top */
-  box-shadow: 2px 0 rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
-  overflow-y: auto; /* Enable scrolling if content overflows */
+  top: 0;
+  /* This makes it sticky at the top */
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a shadow for better visibility */
+  overflow-y: auto;
+  /* Enable scrolling if content overflows */
+  left: 20px;
 }
 
 .sidebar h2 {
   margin-top: 10vh;
   margin-bottom: 20px;
-  color: #8e44ad;
+  color: var(--primary-color);
 }
 
 .sidebar-menu {
@@ -30,15 +35,18 @@
   color: #333;
   border-radius: 8px;
   transition: background-color 0.2s;
+  transition: width 0s;
 }
 
 .menu-item:hover {
   background-color: #f0f0f0;
+  color: var(--primary-color);
+  width: 200px;
 }
 
 .menu-item.active {
   background-color: #f0f0f0;
-  color: #8e44ad;
+  color:var(--primary-color);
 }
 
 .icon {
@@ -48,10 +56,13 @@
 /* Optional: Add responsiveness for smaller screens */
 @media (max-width: 768px) {
   .sidebar {
-    width: 100%; /* Make it full-width for smaller screens */
-    position: fixed; /* Optionally make it fixed instead of sticky */
+    width: 100%;
+    /* Make it full-width for smaller screens */
+    position: fixed;
+    /* Optionally make it fixed instead of sticky */
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
+    /* Ensure it stays on top */
   }
 }

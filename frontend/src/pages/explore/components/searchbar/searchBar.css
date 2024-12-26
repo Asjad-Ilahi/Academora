@@ -1,0 +1,26 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap for a more compact look */
+    margin: 20px;
+    margin-top: 0px;
+    max-width: 400px; /* Adjusted max width for the container */
+    margin-left: auto; /* Pushes the container to the right */
+    justify-content: flex-end; /* Ensures alignment of items inside the container */
+}
+
+.searchInput {
+    padding: 10px 15px; /* Slightly larger padding for a bigger input */
+    font-size: 16px; /* Slightly larger font size */
+    border: 1px solid grey; /* Slight greyish stroke */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex-grow: 1; /* Optional: Allows the input to grow and fill available space */
+}
+
+.searchInput:focus {
+    border-color: var(--primary-color); /* Main color on focus */
+    box-shadow: 0 0 5px var(--primary-color);
+}
+

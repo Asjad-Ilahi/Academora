@@ -1,27 +1,17 @@
 import React from 'react';
 import './mainContent.css';
-import Venture from '../../../../assets/venture.svg';
 import Nust from '../../../../assets/comsats.svg';
-import Women from '../../../../assets/women_avatar.svg'
+import Women from '../../../../assets/women_avatar.svg';
+import HeroSection from '../heroSection/heroSection';
+import SearchBar from '../searchbar/searchBar';
 
 function MainContent() {
   return (
     <div className="main-main-content">
-      <div className="venture-header">
-        <div className="venture-graphics">
-          <img src={Venture} alt="VR" className="vr-icon" width={70} height={70} />
-        </div>
-        <h1 className="venture-title">Venture</h1>
-      </div>
 
-      <div className="search-container main-search">
-        <input 
-          type="text" 
-          className="search-input"
-          placeholder="Type here"
-        />
-        <button className="search-button">Search</button>
-      </div>
+      <HeroSection />
+
+      <SearchBar />
 
       <div className="main-university-cards">
         <div className="main-university-card">

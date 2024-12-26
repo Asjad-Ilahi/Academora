@@ -6,37 +6,6 @@
     color: black;
   }
   
-  .society-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .society-card {
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .recommended-societies .society-card .society-logo {
-    border:none;
-    object-fit:cover;
-    width: 100%;
-    height: 70%;
-
-  }
-  
-  .society-card h3 {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .society-card p {
-    color: #666;
-    margin-bottom: 20px;
-  }
   
   .join-button {
     background: #8B3DFF;

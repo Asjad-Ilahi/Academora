@@ -1,21 +1,11 @@
+// Societies.jsx
 import React from 'react';
 import './joinSocieties.css';
+import SocietyCard from '../../../components/societyCard/societyCard';
 import GDSC from '../../../assets/GDSC.svg';
 import IEEE from '../../../assets/IEEE.svg';
 import C3 from '../../../assets/C3.svg';
 import Join from '../../../assets/joinSociety.svg';
-const SocietyCard = ({ logo, title, description }) => (
-  <div className="society-card">
-    <img src={logo} alt={title} className="society-logo" />
-    <div className="society-info">
-      <h3>
-        {title} <span className="decorative-line"></span>
-      </h3>
-      <p>{description}</p>
-      <button className="join-button">Join</button>
-    </div>
-  </div>
-);
 
 const Societies = () => {
   return (
