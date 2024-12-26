@@ -10,14 +10,17 @@ import Navbar from './components/navbar/navBar';
 import Footer from './components/footer/footer';
 import ChatBot from './components/ai/ai';
 import ScrollToTop from './components/scrollToTop'; // import ScrollToTop
+import Society from './pages/society/society';  // import Society page
+import StudCircle from './pages/studyCircle/studyCircle';
+import EmailVerificationPage from './pages/emailVerification/emailVerification';
 
 function AppContent() {
   const location = useLocation();
-  const hideNavAndFooter = ['/sign-up', '/sign-in'].includes(location.pathname);
+  const hideNavAndFooter = ['/sign-up', '/sign-in',"/emailVerification"].includes(location.pathname);
 
   return (
     <>
-      <ScrollToTop /> {/* Add ScrollToTop component */}
+      <ScrollToTop /> 
 
       {!hideNavAndFooter && <Navbar />}
       
@@ -29,6 +32,9 @@ function AppContent() {
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/sign-in" element={<LoginForm />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/society" element={<Society />} /> 
+        <Route path="/emailVerification" element={<EmailVerificationPage />} /> 
+        <Route path="/study-circles" element={<StudCircle />} /> 
       </Routes>
 
       {!hideNavAndFooter && <ChatBot />}
@@ -46,5 +52,3 @@ function App() {
 }
 
 export default App;
-
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './components/sideBar/sidebar';
+import Sidebar from '../../components/sideBar/sidebar';
 import MainContent from './components/mainContent/mainContent';
 import './explore.css';
 

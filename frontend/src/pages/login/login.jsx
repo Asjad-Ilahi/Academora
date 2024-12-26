@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../store/store.jsx';
+import toast, { Toaster } from 'react-hot-toast';
 import './login.css';
 import googleIcon from '../../assets/google-icon.svg';
 import loginIllustration from '../../assets/who_are_we.svg';
@@ -10,6 +13,9 @@ export function LoginForm() {
     rememberMe: false
   });
 
+  const { login, isLoading, error } = useAuthStore();
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevState => ({
@@ -18,19 +24,25 @@ export function LoginForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    try {
+      await login(formData.email, formData.password);
+      toast.success('Login successful!');
+      navigate('/');
+    } catch (err) {
+      toast.error('Login failed. Please try again.');
+      console.error('Login error:', err);
+    }
   };
 
   const handleGoogleSignIn = () => {
-    // Handle Google sign in
-    console.log('Google sign in clicked');
+    toast('Google sign-in feature coming soon!', { icon: '🚀' });
   };
 
   return (
     <div className="login-container">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="login-form-section">
         <div className="login-header">
           <h1>WELCOME <span className='highlight'>BACK</span></h1>
@@ -56,7 +68,7 @@ export function LoginForm() {
               type="password"
               id="password"
               name="password"
-              placeholder="Enter Your Password"
+              placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
               required
@@ -79,9 +91,11 @@ export function LoginForm() {
             </a>
           </div>
 
-          <button type="submit" className="sign-in-button">
-            Sign in
+          <button type="submit" className="sign-in-button" disabled={isLoading}>
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
+
+          {error && <p className="error-message">{error}</p>}
 
           <button 
             type="button" 
@@ -108,4 +122,3 @@ export function LoginForm() {
     </div>
   );
 }
-

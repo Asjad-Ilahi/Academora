@@ -1,15 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../store/store.jsx';
 import logo from '../../assets/logo.svg'; // Adjust path to match your folder structure
+import defaultProfileImage from '../../assets/women_avatar.svg'; // Add a default profile image
 
 import './navBar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const location = useLocation(); // Get the current location
+  const { user, isAuthenticated, checkAuth, logout } = useAuthStore(); // Get user and authentication status
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkAuth(); // Check authentication status on component mount
+  }, [checkAuth]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   // Reset menu state on window resize
@@ -73,12 +95,32 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-buttons">
-            <button className="btn btn-ghost">
-              <Link to="/sign-in">Sign In</Link>
-            </button>
-            <button className="btn btn-primary">
-              <Link to="/sign-up">Sign Up</Link>
-            </button>
+            {isAuthenticated ? (
+              <div className="profile-container">
+                <img
+                  src={user.profileImage || defaultProfileImage}
+                  alt="Profile"
+                  className="profile-image"
+                  onClick={toggleProfileMenu}
+                />
+                {isProfileMenuOpen && (
+                  <div className="profile-menu">
+                    <button className="logout-button" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <button className="btn btn-ghost">
+                  <Link to="/sign-in">Sign In</Link>
+                </button>
+                <button className="btn btn-primary">
+                  <Link to="/sign-up">Sign Up</Link>
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,0 +1,49 @@
+.joined-societies {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .highlight {
+    color: #8B3DFF;
+  }
+  
+  .see-all {
+    color: #8B3DFF;
+    text-decoration: none;
+  }
+  
+  .societies-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+  
+  .society-logo {
+    object-fit: contain;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .society-logo img {
+    width: 80%;
+    height: auto;
+  }
+  
+  
