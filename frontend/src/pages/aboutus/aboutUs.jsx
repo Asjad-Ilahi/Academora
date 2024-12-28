@@ -7,7 +7,7 @@ import { OurMission } from './Components/ourMission/ourMission';
 import { FAQ } from '../../components/faq/faq';
 import ChatBot from '../../components/ai/ai';
 
-import './aboutUs.css'; // Import the CSS file
+import './aboutUs.css'; 
 
 export default function AboutUs() {
   return (

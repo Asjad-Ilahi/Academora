@@ -4,7 +4,7 @@ import IEEE from '../../../../assets/IEEE.svg';
 import C3 from '../../../../assets/C3.svg';
 
 export default function JoinedSocieties() {
-  const societies = Array(6).fill('IEEE'); // Example with 6 IEEE logos
+  const societies = Array(6).fill('IEEE'); 
 
   return (
     <section className="joined-societies">

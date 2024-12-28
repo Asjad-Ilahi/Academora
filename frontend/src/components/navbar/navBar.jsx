@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/store.jsx';
-import logo from '../../assets/logo.svg'; // Adjust path to match your folder structure
-import defaultProfileImage from '../../assets/women_avatar.svg'; // Add a default profile image
+import logo from '../../assets/logo.svg'; 
+import defaultProfileImage from '../../assets/women_avatar.svg'; 
 
 import './navBar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current location
-  const { user, isAuthenticated, checkAuth, logout } = useAuthStore(); // Get user and authentication status
+  const location = useLocation(); 
+  const { user, isAuthenticated, checkAuth, logout } = useAuthStore(); 
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkAuth(); // Check authentication status on component mount
+    checkAuth(); 
   }, [checkAuth]);
 
   const toggleMenu = () => {
@@ -34,17 +34,16 @@ export default function Navbar() {
     }
   };
 
-  // Reset menu state on window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setIsMenuOpen(false); // Close the menu on larger screens
+        setIsMenuOpen(false); 
       }
     };
 
     window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize); // Cleanup listener on component unmount
+      window.removeEventListener('resize', handleResize); 
     };
   }, []);
 

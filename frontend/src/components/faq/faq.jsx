@@ -1,12 +1,10 @@
 'use client';
 
 import React, { useState, createContext, useContext } from 'react';
-import './faq.css'; // Import the CSS file for styles
+import './faq.css'; 
 
-// Create Context for Accordion
 const AccordionContext = createContext();
 
-// Accordion Wrapper Component
 export function Accordion({ children, type = 'single', collapsible = false, className = '' }) {
   const [openItem, setOpenItem] = useState(type === 'single' ? null : []);
 

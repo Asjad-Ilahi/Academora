@@ -1,15 +1,15 @@
 
 .signup-container {
   display: flex;
-  flex-direction: row; /* Stack elements vertically */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  min-height: 100vh; /* Full viewport height */
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
   padding: 2rem;
   gap: 4rem;
   max-width: 1200px;
   margin:0 auto;
-  box-sizing: border-box; /* Ensure padding is included in total width/height */
+  box-sizing: border-box; 
 }
 
   
@@ -177,9 +177,9 @@
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: #000 !important; /* Enforce black text color */
-  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important; /* Keep white background */
-  transition: background-color 5000s ease-in-out 0s; /* Prevent flicker */
+  -webkit-text-fill-color: #000 !important; 
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important; 
+  transition: background-color 5000s ease-in-out 0s; 
 }
 
   @media (max-width: 768px) {

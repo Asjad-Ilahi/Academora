@@ -1,4 +1,4 @@
-/* General Styles */
+
 
 .accordion-wrapper {
   outline: none;
@@ -6,7 +6,7 @@
   margin: 0 auto;
   border: none;
   background-color: transparent;
-  padding: 0 20px; /* Add padding for smaller screens */
+  padding: 0 20px; 
 }
 
 .accordion-item {
@@ -17,13 +17,13 @@
 
 .accordion-item.open {
   outline: none;
-  background-color: #f9f9f9; /* Optional: Add background color when open */
+  background-color: #f9f9f9; 
   border: none;
 }
 
 .accordion-trigger {
   outline: none;
-  border: none; /* Remove border around the trigger */
+  border: none; 
   display: flex;
   align-items: center;
   padding: 16px;
@@ -39,7 +39,7 @@
 
 .accordion-trigger.active {
   outline: none;
-  color: var(--primary-color); /* Add color when active */
+  color: var(--primary-color); 
   border: none;
   background-color: transparent;
 }
@@ -60,7 +60,7 @@
 
 .accordion-content.expanded {
   outline: none;
-  max-height: 200px; /* Adjust as needed for content */
+  max-height: 200px; 
   border: none;
 }
 
@@ -73,7 +73,6 @@
   background-color: transparent;
 }
 
-/* FAQ Container Styles */
 .faq-container {
   outline: none;
   padding: 40px 20px;
@@ -98,18 +97,17 @@
 
 .accordion-trigger {
   border: none;
-  outline: none; /* Remove outline */
-  box-shadow: none; /* Ensure no shadow */
+  outline: none; 
+  box-shadow: none; 
 }
 
 .accordion-trigger:focus,
 .accordion-trigger:active,
 .accordion-trigger:focus-visible {
-  outline: none; /* Remove focus outline */
-  box-shadow: none; /* Remove any residual shadows */
+  outline: none; 
+  box-shadow: none; 
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .accordion-trigger {
     font-size:16px;

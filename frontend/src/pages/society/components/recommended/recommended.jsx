@@ -1,4 +1,3 @@
-// RecommendedSocieties.jsx
 import React from 'react';
 import './recommended.css';
 import SocietyCard from '../../../../components/societyCard/societyCard';

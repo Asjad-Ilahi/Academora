@@ -16,11 +16,9 @@
   font-size: 32px;
   margin-bottom: 20px;
   font-weight: bold;
-}
-
-.university-header span {
   color: var(--primary-color);
 }
+
 
 .university-description {
   display: flex;

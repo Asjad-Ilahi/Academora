@@ -1,6 +1,6 @@
-// Hero Component
+
 import React from 'react';
-import './heroSection.css'; // Import the CSS file
+import './heroSection.css'; 
 
 export function Hero() {
   return (

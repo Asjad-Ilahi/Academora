@@ -1,6 +1,6 @@
 .hero-section {
   display: flex;
-  align-items: center; /* Centers content vertically */
+  align-items: center; 
   background-color: #1a1a1a;
   color: white;
   padding-bottom: 0px;
@@ -12,18 +12,18 @@
   padding: 0 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers text vertically */
-  height: 100%; /* Ensures proper alignment */
+  justify-content: center; 
+  height: 100%;
 }
 
 .heroContent h1 {
   color: white;
-  margin-bottom: 20px; /* Adds spacing */
-  letter-spacing: 1.5px; /* Added letter spacing for cleaner look */
+  margin-bottom: 20px; 
+  letter-spacing: 1.5px;
 }
 
 .highlight {
-  letter-spacing: 1.5px; /* Ensure consistency with main heading */
+  letter-spacing: 1.5px; 
 }
 
 .hero-text {
@@ -33,8 +33,8 @@
 }
 
 .hero-para {
-  margin: 0; /* Reset margin */
-  padding: 0; /* Reset padding */
+  margin: 0; 
+  padding: 0; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,7 +43,7 @@
 
 .hero-para p {
   color: var(--hero-paragraph);
-  letter-spacing: 0.8px; /* Added subtle letter spacing to paragraphs */
+  letter-spacing: 0.8px; 
 }
 
 .vertical-line {
@@ -69,7 +69,7 @@
   }
   
   .heroContent {
-      align-items: center; /* Centers content horizontally for small screens */
+      align-items: center; 
       text-align: center;
   }
 

@@ -9,8 +9,8 @@ import Explore from './pages/explore/explore';
 import Navbar from './components/navbar/navBar';
 import Footer from './components/footer/footer';
 import ChatBot from './components/ai/ai';
-import ScrollToTop from './components/scrollToTop'; // import ScrollToTop
-import Society from './pages/society/society';  // import Society page
+import ScrollToTop from './components/scrollToTop'; 
+import Society from './pages/society/society'; 
 import StudCircle from './pages/studyCircle/studyCircle';
 import EmailVerificationPage from './pages/emailVerification/emailVerification';
 

@@ -11,9 +11,8 @@ const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null);  // Reference to scroll to the latest message
+  const messagesEndRef = useRef(null);  
 
-  // Load chat history from localStorage when the component mounts
   useEffect(() => {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages'));
     if (storedMessages) {
@@ -21,12 +20,11 @@ const ChatBot = () => {
     }
   }, []);
 
-  // Scroll to the latest message whenever messages change or when chat is opened
   useEffect(() => {
     if (isOpen && messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [isOpen, messages]);  // Triggered when chat is opened or new messages are added
+  }, [isOpen, messages]);  
 
   const generateResponse = async (prompt) => {
     setIsLoading(true);
@@ -67,16 +65,15 @@ const ChatBot = () => {
     // Add user message
     setMessages(prev => {
       const newMessages = [...prev, { text: inputValue, isBot: false }];
-      localStorage.setItem('chatMessages', JSON.stringify(newMessages));  // Store chat history
+      localStorage.setItem('chatMessages', JSON.stringify(newMessages));  
       return newMessages;
     });
 
     setInputValue('');
-    // Generate and add bot response
     const botResponse = await generateResponse(inputValue + ' (always answer like a professional on universities, Dont Ever Generate Any Kind Of Code)');
     setMessages(prev => {
       const newMessages = [...prev, { text: botResponse, isBot: true }];
-      localStorage.setItem('chatMessages', JSON.stringify(newMessages));  // Store chat history
+      localStorage.setItem('chatMessages', JSON.stringify(newMessages));  history
       return newMessages;
     });
   };
@@ -131,7 +128,7 @@ const ChatBot = () => {
                 )}
               </div>
             ))}
-            <div ref={messagesEndRef} />  {/* Scroll marker */}
+            <div ref={messagesEndRef} />  
             {isLoading && (
               <div className="message bot">
                 <div className="bot-avatar">

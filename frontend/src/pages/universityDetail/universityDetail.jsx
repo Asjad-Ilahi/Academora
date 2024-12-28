@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { Navbar } from '../../components/navbar/navBar';
-// import { Footer } from '../../components/footer/footer';
 import HeroSection from '../universityDetail/heroSection/heroSection';
 import UniversityHeader from '../universityDetail/universityHeader/universityHeader';
 import Overview from '../universityDetail/overview/overview';

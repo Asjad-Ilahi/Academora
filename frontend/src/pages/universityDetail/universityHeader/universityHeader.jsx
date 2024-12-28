@@ -5,7 +5,7 @@ const UniversityHeader = ({ university }) => {
   return (
     <div className="university-header">
       <div className="university-text">
-        <h1>{university.name} <span>University</span></h1>
+        <h1>{university.name} </h1>
         <div className="university-description">
           <div className="description-bar"></div>
           <p>{university.description}</p>

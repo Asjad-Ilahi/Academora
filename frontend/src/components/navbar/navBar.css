@@ -44,12 +44,12 @@
   top: 4rem;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.8); /* Frosted glass effect */
-  backdrop-filter: blur(10px); /* Add blur for frosted effect */
+  background-color: rgba(255, 255, 255, 0.8); 
+  backdrop-filter: blur(10px); 
   padding: 1rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 20;
-  border-radius: 0px; /* Optional: Rounded corners for the dropdown */
+  border-radius: 0px; 
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s ease-in-out;
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   z-index: 50;
-  border-radius: 50%; /* Optional: Make the button circular */
+  border-radius: 50%; 
   padding: 0.5rem;
   transition: background-color 0.3s ease;
 }
@@ -110,8 +110,8 @@
 
 .nav-link.active-link {
   font-weight: bold;
-  color: var(--primary-color); /* Change to the desired active color */
-  border-bottom: 2px solid var(--primary-color); /* Optional: Add an underline for active state */
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color); 
 }
 
 .btn-ghost {
@@ -131,8 +131,8 @@
 .menu-toggle:focus,
 .menu-toggle:active,
 .menu-toggle:focus-visible {
-  outline: none; /* Remove focus outline */
-  box-shadow: none; /* Remove any residual shadows */
+  outline: none; 
+  box-shadow: none;
   background-color: transparent;
   z-index: 50;
 }
@@ -182,13 +182,12 @@
     display: flex !important;
     opacity: 1;
     transform: translateY(0);
-    background-color: rgba(255, 255, 255, 0.8); /* Frosted glass effect */
+    background-color: rgba(255, 255, 255, 0.8); 
     backdrop-filter: blur(10px); 
   }
   
 }
 
-/* Center logo for smaller devices */
 @media (max-width: 767px) {
   .navbar-logo {
     position: absolute;

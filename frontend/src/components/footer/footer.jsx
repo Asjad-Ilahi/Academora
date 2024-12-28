@@ -1,4 +1,4 @@
-// Footer.jsx
+
 import React from 'react';
 import './footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
