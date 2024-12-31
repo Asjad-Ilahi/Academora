@@ -5,6 +5,9 @@
   margin-bottom: 20px;
 }
 
+.recommended-societies h2{
+  color: #202020;
+}
 .join-button {
   background: var(--primary-color);
   color: white;

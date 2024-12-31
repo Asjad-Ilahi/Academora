@@ -4,17 +4,7 @@ import Brain from '../../../assets/brainstorm-brigade.svg';
 import Knowledge from '../../../assets/knowledge-hub.svg';
 import Scholar from '../../../assets/scholar.svg';
 import Circle from '../../../assets/studyCircle.svg';
-
-const StudyCircleCard = ({ logo, title, description }) => (
-  <div className="study-circle-card">
-    <img src={logo} alt={title} className="study-circle-logo" />
-    <div className="study-circle-info">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <button className="learn-button">Learn More</button>
-    </div>
-  </div>
-);
+import SocietyCard from '../../../components/societyCard/societyCard';  // Import the SocietyCard component
 
 const StudyCircles = () => {
   const studyCircles = [
@@ -46,7 +36,7 @@ const StudyCircles = () => {
       </div>
       <div className="study-circles-grid">
         {studyCircles.map((circle, index) => (
-          <StudyCircleCard key={index} {...circle} />
+          <SocietyCard key={index} {...circle} />  // Use SocietyCard here
         ))}
       </div>
       <button className="load-more-learn">LOAD MORE</button>

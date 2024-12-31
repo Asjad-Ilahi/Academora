@@ -1,7 +1,7 @@
 import React from 'react';
 import './join-societies.css';
 import IEEE from '../../../../assets/IEEE.svg';
-import C3 from '../../../../assets/C3.svg';
+import Story from '../../../../components/stories/stories';
 
 export default function JoinedSocieties() {
   const societies = Array(6).fill('IEEE'); 
@@ -14,12 +14,9 @@ export default function JoinedSocieties() {
       </div>
       <div className="societies-grid">
         {societies.map((society, index) => (
-          <div key={index} className="society-logo">
-            <img src={IEEE} alt={society} />
-          </div>
+          <Story key={index} logo={IEEE} alt={society} />
         ))}
       </div>
     </section>
   );
 }
-

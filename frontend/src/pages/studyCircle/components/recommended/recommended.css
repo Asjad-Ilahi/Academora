@@ -1,4 +1,4 @@
-.recommended-societies {
+.recommended-study-circles {
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -21,4 +21,7 @@
     background: #7029FF;
   }
   
-  
+  .study-circle-cards{
+    display: flex;
+    gap: 10px;
+  }

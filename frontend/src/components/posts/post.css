@@ -1,6 +1,6 @@
-
 .posts-container {
     padding-left: 20px;
+    padding-right: 20px; /* Add padding to both sides */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -11,6 +11,8 @@
     padding: 20px;
     border: 1px solid #eee;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    background: #fff;
 }
 
 .post-header {
@@ -34,6 +36,7 @@
     font-size: 1.1em;
     margin-bottom: 10px;
     color: #333;
+    line-height: 1.3;
 }
 
 .post-description {
@@ -46,11 +49,15 @@
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    object-fit: cover; /* Ensures the image doesn't stretch */
 }
 
 .post-actions {
     display: flex;
-    gap: 20px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Line above the options */
 }
 
 .action-button {
@@ -62,9 +69,49 @@
     color: #666;
     cursor: pointer;
     padding: 5px;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s; /* Adds a hover animation */
 }
 
 .action-button:hover {
     color: #8B3DFF;
+    transform: scale(1.1); /* Adds a subtle zoom effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .posts-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .post-card {
+        padding: 15px;
+    }
+
+    .post-title {
+        font-size: 1em;
+    }
+
+    .post-description {
+        font-size: 0.95em;
+    }
+
+    .post-actions {
+        flex-direction: column; /* Stacks actions vertically */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-card {
+        padding: 10px;
+    }
+
+    .post-title {
+        font-size: 0.9em;
+    }
+
+    .post-description {
+        font-size: 0.85em;
+    }
 }

@@ -30,8 +30,8 @@
   text-decoration: none;
   color: #333;
   border-radius: 8px;
-  transition: background-color 0.2s;
-  transition: width 0s;
+  transition: background-color 0s, color 0.2s, width 0s;
+  width: 250px; /* Default width */
 }
 
 .menu-item:hover {
@@ -41,8 +41,9 @@
 }
 
 .menu-item.active {
-  background-color: #f0f0f0;
-  color:var(--primary-color);
+  background-color: #B083D2; /* Active background color */
+  color: white; /* Adjust text color for contrast */
+  width: 200px; /* Reduced width when active */
 }
 
 .icon {

@@ -11,6 +11,7 @@ import Footer from './components/footer/footer';
 import ChatBot from './components/ai/ai';
 import ScrollToTop from './components/scrollToTop'; 
 import Society from './pages/society/society'; 
+import BookmarksPage from './pages/bookmark/bookmark'; 
 import StudCircle from './pages/studyCircle/studyCircle';
 import EmailVerificationPage from './pages/emailVerification/emailVerification';
 
@@ -33,6 +34,7 @@ function AppContent() {
         <Route path="/sign-in" element={<LoginForm />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/society" element={<Society />} />
+        <Route path="/bookmark" element={<BookmarksPage />} />
         <Route path="/emailVerification" element={<EmailVerificationPage />} />
         <Route path="/study-circles" element={<StudCircle />} />
       </Routes>

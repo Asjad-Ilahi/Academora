@@ -1,4 +1,4 @@
-.joined-societies {
+.joined-study-circles {
   padding: 20px;
   background: #fff;
   border-radius: 10px;
@@ -33,22 +33,8 @@
   color: white; /* Font color changes to white */
 }
 
-.societies-grid {
+.study-circles-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-}
-
-.society-logo {
-  object-fit: contain;
-  border: 1px solid #333;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.society-logo img {
-  width: 80%;
-  height: auto;
 }

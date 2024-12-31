@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../../components/layout/layout';
 import JoinedSocieties from './components/join-societies/join-societies';
 import RecommendedSocieties from './components/recommended/recommended';
-import SocietyPosts from '../society/components/society-posts/society-posts';
+import SocietyPosts from '../../components/posts/post';
 
 export default function Society() {
   return (

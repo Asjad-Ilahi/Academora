@@ -1,25 +1,22 @@
 import React from 'react';
-import './join-societies.css';
+import './join-studyCircles.css';
 import IEEE from '../../../../assets/IEEE.svg';
-import C3 from '../../../../assets/C3.svg';
+import Story from '../../../../components/stories/stories';
 
 export default function JoinedSocieties() {
-  const societies = Array(6).fill('IEEE'); // Example with 6 IEEE logos
+  const societies = Array(6).fill('IEEE'); 
 
   return (
-    <section className="joined-societies">
+    <section className="joined-study-circles">
       <div className="section-header">
         <h2>Joined <span className="highlight">Study Circles</span></h2>
         <a href="#" className="see-all">See All</a>
       </div>
-      <div className="societies-grid">
+      <div className="study-circles-grid">
         {societies.map((society, index) => (
-          <div key={index} className="society-logo">
-            <img src={IEEE} alt={society} />
-          </div>
+          <Story key={index} logo={IEEE} alt={society} />
         ))}
       </div>
     </section>
   );
 }
-
