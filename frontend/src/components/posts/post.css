@@ -63,7 +63,7 @@
 .action-button {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
     background: none;
     border: none;
     color: #666;
