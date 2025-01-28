@@ -1,117 +1,206 @@
-.posts-container {
-    padding-left: 20px;
-    padding-right: 20px; /* Add padding to both sides */
+/* Root CSS Variables for theme */
+:root {
+    --secondary-color: #6c757d;
+    --soft-black: rgba(0, 0, 0, 0.8);
+    --soft-gray: rgba(0, 0, 0, 0.6);
+    --light-gray: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Container for all posts */
+  .posts-container {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
-}
-
-.post-card {
+  }
+  
+  /* Single post card */
+  .post-card {
     padding: 20px;
-    border: 1px solid #eee;
+    border: 1px solid var(--light-gray);
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-    background: #fff;
-}
-
-.post-header {
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--soft-black);
+  }
+  
+  .post-card:hover {
+    border-color: var(--primary-color);
+  }
+  
+  /* Post Header */
+  .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-}
-
-.post-author {
+    margin-bottom: 10px;
+  }
+  
+  .post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .author-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--light-gray);
+  }
+  
+  .post-author {
     font-weight: bold;
+    color: var(--soft-black);
+  }
+  
+  .post-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .post-date {
+    font-size: 0.9rem;
+    color: var(--soft-gray);
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+    color: var(--soft-gray);
+    transition: color 0.2s;
+  }
+  
+  .menu-icon:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Dropdown Menu */
+  .menu-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .menu-option {
+    cursor: pointer;
     color: #333;
-}
-
-.post-time {
-    color: #666;
-    font-size: 0.9em;
-}
-
-.post-title {
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .menu-option:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  /* Post Content */
+  .post-inner-container {
+    padding: 10px 0;
+  }
+  
+  .post-title {
     font-size: 1.1em;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--soft-black);
     line-height: 1.3;
-}
-
-.post-description {
-    color: #666;
+  }
+  
+  .post-description {
+    color: var(--soft-black);
     margin-bottom: 15px;
     line-height: 1.5;
-}
-
-.post-image {
+    font-size: 0.85rem;
+    max-height: 150px; /* Limit height for truncation */
+    overflow: hidden; /* Hide extra content */
+  }
+  
+  .read-more {
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-decoration: underline;
+  }
+  
+  .post-image {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
-    object-fit: cover; /* Ensures the image doesn't stretch */
-}
-
-.post-actions {
+    object-fit: cover;
+  }
+  
+  .post-video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #000;
+  }
+  
+  /* Post Actions */
+  .post-actions {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Line above the options */
-}
-
-.action-button {
+    padding-top: 10px;
+    border-top: 1px solid var(--light-gray);
+    gap: 15px;
+  }
+  
+  .action-button {
     display: flex;
     align-items: center;
     gap: 5px;
     background: none;
     border: none;
-    color: #666;
+    color: var(--soft-gray);
     cursor: pointer;
     padding: 5px;
-    transition: color 0.2s, transform 0.2s; /* Adds a hover animation */
-}
-
-.action-button:hover {
-    color: #8B3DFF;
-    transform: scale(1.1); /* Adds a subtle zoom effect */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .posts-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
+    transition: color 0.2s, transform 0.2s;
+  }
+  
+  .action-button:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  /* Liked Post Button Style */
+  .action-button.liked {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
     .post-card {
-        padding: 15px;
+      padding: 15px;
     }
-
+  
     .post-title {
-        font-size: 1em;
+      font-size: 1.1em;
     }
-
+  
     .post-description {
-        font-size: 0.95em;
+      font-size: 0.9rem;
     }
-
+  
     .post-actions {
-        flex-direction: column; /* Stacks actions vertically */
-        gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
-}
-
-@media (max-width: 480px) {
-    .post-card {
-        padding: 10px;
-    }
-
-    .post-title {
-        font-size: 0.9em;
-    }
-
-    .post-description {
-        font-size: 0.85em;
-    }
-}
+  }
+  
+  
