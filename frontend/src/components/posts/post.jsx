@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { MoreVertical, ThumbsUp, MessageSquare, Share2 } from "lucide-react";
 import "./Post.css";
-import Comment from "../Comments/comments"; // Import updated Comment component
+import CommentModal from "../Comments/comments"; 
+import profilePic from "../../assets/userprofilepic1.svg";
 
 export default function PostComponent() {
   const [menuVisible, setMenuVisible] = useState({});
@@ -11,21 +12,22 @@ export default function PostComponent() {
   const [activePost, setActivePost] = useState(null);
 
   const posts = [
+    // Example posts
     {
       id: 1,
       author: "C3 & Azhar",
-      authorImage: "/author-image.jpg",
+      authorImage: profilePic,
       content: "Who's excited for the upcoming events!",
       description:
         "This event is not just about looking forward; it's about celebrating the journey of preparation and the joy of coming together as a community...",
       date: "Jan 27, 2025",
-      image: "/travel-image.jpg",
+      image: "https://images.unsplash.com/photo-1656489782764-443559c29211?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       video: null,
     },
     {
       id: 2,
       author: "Jane Doe",
-      authorImage: "/author-image2.jpg",
+      authorImage: profilePic,
       content: "Nature is the best escape.",
       description: "A glimpse into the serene beauty of untouched landscapes...",
       date: "Jan 26, 2025",
@@ -35,24 +37,15 @@ export default function PostComponent() {
   ];
 
   const toggleMenu = (postId) => {
-    setMenuVisible((prev) => ({
-      ...prev,
-      [postId]: !prev[postId],
-    }));
+    setMenuVisible((prev) => ({ ...prev, [postId]: !prev[postId] }));
   };
 
   const toggleLike = (postId) => {
-    setLikedPosts((prev) => ({
-      ...prev,
-      [postId]: !prev[postId],
-    }));
+    setLikedPosts((prev) => ({ ...prev, [postId]: !prev[postId] }));
   };
 
   const toggleExpand = (postId) => {
-    setExpandedPosts((prev) => ({
-      ...prev,
-      [postId]: !prev[postId],
-    }));
+    setExpandedPosts((prev) => ({ ...prev, [postId]: !prev[postId] }));
   };
 
   return (
@@ -90,26 +83,30 @@ export default function PostComponent() {
           <div className="post-inner-container">
             <h3 className="post-title">{post.content}</h3>
             <p className="post-description">
-              {expandedPosts[post.id] ? post.description : `${post.description.slice(0, 150)}...`}
+              {expandedPosts[post.id] || post.description.length <= 150
+                ? post.description
+                : `${post.description.slice(0, 150)}...`}
             </p>
-            <button
-              onClick={() => toggleExpand(post.id)}
-              className="read-more"
-              aria-expanded={expandedPosts[post.id]}
-            >
-              {expandedPosts[post.id] ? "Show Less" : "Read More"}
-            </button>
+            {post.description.length > 150 && (
+              <button
+                onClick={() => toggleExpand(post.id)}
+                className="read-more"
+                aria-expanded={expandedPosts[post.id]}
+              >
+                {expandedPosts[post.id] ? "Show Less" : "Read More"}
+              </button>
+            )}
 
             {/* Post Media (Image or Video) */}
-            {post.image && <img src={post.image} alt="Post visual" className="post-image" />}
+            {post.image && (
+              <div className="post-media-container">
+                <img src={post.image} alt="Post visual" />
+              </div>
+            )}
             {post.video && (
-              <video
-                className="post-video"
-                controls
-                width="100%"
-                src={post.video}
-                alt="Post video"
-              />
+              <div className="post-media-container">
+                <video className="post-media" controls src={post.video} />
+              </div>
             )}
           </div>
 
@@ -128,7 +125,7 @@ export default function PostComponent() {
               aria-label="Comment"
               onClick={() => {
                 setCommentModalOpen(true);
-                setActivePost(post.id);
+                setActivePost(post);
               }}
             >
               <MessageSquare size={18} />
@@ -143,14 +140,14 @@ export default function PostComponent() {
       ))}
 
       {/* Comment Modal */}
-      {commentModalOpen && (
-        <Comment
+      {commentModalOpen && activePost && (
+        <CommentModal
           isOpen={commentModalOpen}
           onClose={() => {
             setCommentModalOpen(false);
             setActivePost(null);
           }}
-          postId={activePost}
+          post={activePost}
         />
       )}
     </div>
