@@ -5,17 +5,16 @@
   --light-gray: rgba(0, 0, 0, 0.1);
 }
 
-/* Container for all posts */
 .posts-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%; /* Ensure it takes the full width allocated by flex */
 }
 
-/* Single post card */
 .post-card {
-  width: 600px;
+  width: 100%; /* Ensure it takes the full width of its container */
   max-width: 100%;
   padding: 15px;
   border: 1px solid var(--light-gray);

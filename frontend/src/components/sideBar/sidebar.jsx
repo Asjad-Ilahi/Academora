@@ -2,87 +2,78 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.css';
 import PopularImage from '../../assets/popular-bar.svg';
-import ArrowUp from '../../assets/arrowUp-bar.svg';
 import Bookmark from '../../assets/bookmark-bar.svg';
 import JoinSociety from '../../assets/joinSociety-bar.svg';
 import StudyCircles from '../../assets/studyCircle-bar.svg';
-import CreatePostIcon from '../../assets/plus.svg'; // Icon for Create Post
+import CreatePostIcon from '../../assets/plus.svg';
 
 function Sidebar() {
-  const location = useLocation(); // Get current location
-  const [activeItem, setActiveItem] = useState(location.pathname); // Set initial state based on the path
+  const location = useLocation();
+  const [activeItem, setActiveItem] = useState(location.pathname);
 
   const handleItemClick = (item) => {
     setActiveItem(item);
   };
 
   return (
-    <aside className="sidebar">
-      <h2>Explore</h2>
-
+    <div className="sidebar">
       <nav className="sidebar-menu">
         <Link
           to="/explore"
           className={`menu-item ${activeItem === '/explore' ? 'active' : ''}`}
           onClick={() => handleItemClick('/explore')}
         >
-          <span className="icon">
-            <img src={PopularImage} alt="Popular" />
-          </span>
-          Popular
+          <div className="icon-container">
+            <img src={PopularImage} alt="Popular" className="icon" />
+          </div>
+          <span>Popular</span>
         </Link>
-        <a
-          href="#recent"
-          className={`menu-item ${activeItem === '/#recent' ? 'active' : ''}`}
-          onClick={() => handleItemClick('/#recent')}
-        >
-          <span className="icon">
-            <img src={ArrowUp} alt="Recent" />
-          </span>
-          Recent
-        </a>
+
         <Link
           to="/society"
           className={`menu-item ${activeItem === '/society' ? 'active' : ''}`}
           onClick={() => handleItemClick('/society')}
         >
-          <span className="icon">
-            <img src={JoinSociety} alt="Society" />
-          </span>
-          Societies
+          <div className="icon-container">
+            <img src={JoinSociety} alt="Societies" className="icon" />
+          </div>
+          <span>Societies</span>
         </Link>
+
         <Link
           to="/study-circles"
           className={`menu-item ${activeItem === '/study-circles' ? 'active' : ''}`}
           onClick={() => handleItemClick('/study-circles')}
         >
-          <span className="icon">
-            <img src={StudyCircles} alt="Study Circles" />
-          </span>
-          Study Circles
+          <div className="icon-container">
+            <img src={StudyCircles} alt="Study Circles" className="icon" />
+          </div>
+          <span>Study Circles</span>
         </Link>
+
         <Link
           to="/bookmark"
           className={`menu-item ${activeItem === '/bookmark' ? 'active' : ''}`}
           onClick={() => handleItemClick('/bookmark')}
         >
-          <span className="icon">
-            <img src={Bookmark} alt="Bookmark" />
-          </span>
-          Bookmark
+          <div className="icon-container">
+            <img src={Bookmark} alt="Bookmark" className="icon" />
+          </div>
+          <span>Bookmark</span>
         </Link>
+
         <Link
           to="/create-post"
           className={`menu-item ${activeItem === '/create-post' ? 'active' : ''}`}
           onClick={() => handleItemClick('/create-post')}
         >
-          <span className="icon">
-            <img src={CreatePostIcon} width={20} alt="Create Post" />
-          </span>
-          Create Post
+          <div className="icon-container">
+            <img src={CreatePostIcon} alt="Create Post" className="icon" />
+          </div>
+          <span>Create Post</span>
         </Link>
       </nav>
-    </aside>
+    </div>
   );
 }
 
