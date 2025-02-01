@@ -31,7 +31,7 @@ export function UserSectionCreatePost() {
 
   return (
     <div className="user-section-container">
-      <div className="hero-section">
+      <div className="heroSectionCreatePost">
         <div className="wave-background">
           <img src={wave || "/placeholder.svg"} alt="Wave Background" className="wave-image" />
         </div>

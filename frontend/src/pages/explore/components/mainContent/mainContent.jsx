@@ -14,10 +14,11 @@ function MainContent() {
       <HeroSection />
 
       <SearchBar />
-      <div className='recentPostContainer'>
+      <div className='recentPostContainer '>
         <Post />
         <Recentbar/>
       </div>
+
     </div>
   );
 }

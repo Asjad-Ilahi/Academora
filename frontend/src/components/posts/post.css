@@ -1,16 +1,42 @@
 /* Root CSS Variables for theme */
-:root {
-  --soft-black: rgba(0, 0, 0, 0.8);
-  --soft-gray: rgba(0, 0, 0, 0.6);
-  --light-gray: rgba(0, 0, 0, 0.1);
-}
+
 
 .posts-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Ensure it takes the full width allocated by flex */
+  width: 100%;
+}
+
+/* Default standalone style */
+:not(.recentPostContainer) > .posts-container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .recentPostContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .recentPostContainer > *:last-child {
+    width: 100%;
+  }
+
+  /* Make post container consistent on mobile */
+  .posts-container {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    padding: 10px;
+  }
 }
 
 .post-card {

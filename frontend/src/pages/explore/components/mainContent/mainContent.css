@@ -1,24 +1,27 @@
+/* MainContent.css */
 .main-main-content {
-  flex: 1;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  color: var(--paragraph-color);
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem auto;
 }
 
 .recentPostContainer {
   display: flex;
-  gap: 20px; /* Adjust the gap between Post and Recentbar */
-  align-items: flex-start; /* Align items at the top */
+  gap: 2rem;
+  width: auto;
+  max-width: 90rem; /* Adjust based on your design needs */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Ensure the Post component takes up more space */
-.posts-container {
-  flex: 2; /* Post takes 2/3 of the space */
+/* Style for Post component when inside recentPostContainer */
+.recentPostContainer > *:first-child {
+  flex: 1;
+  min-width: 0; 
 }
 
-/* Ensure the Recentbar component takes up less space */
-.recent-container {
-  flex: 1; /* Recentbar takes 1/3 of the space */
-  max-width: 300px; /* Limit the maximum width */
+/* Style for Recentbar */
+.recentPostContainer > *:last-child {
+  /* width: 20rem;  */
+  flex-shrink: 0; 
 }

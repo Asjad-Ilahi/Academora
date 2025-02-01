@@ -5,6 +5,10 @@
   --bold-heading-color: #000;
   --hero-text-color: #fff;
   --grey-background: #e6e6e6;
+  --soft-black: rgba(0, 0, 0, 0.8);
+  --soft-gray: rgba(0, 0, 0, 0.6);
+  --light-gray: rgba(0, 0, 0, 0.1);
+  --post-default-width: 40rem;
   
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

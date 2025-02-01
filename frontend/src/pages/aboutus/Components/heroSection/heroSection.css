@@ -28,7 +28,7 @@
 }
 
 .hero-paragraph {
-  font-size: 1.25rem; /* Equivalent to text-xl */
+  font-size: 1.25rem; 
 }
 
 @media (min-width: 768px) {
