@@ -2,19 +2,24 @@
 
 .about-us-hero-container {
   position: relative;
-  min-height: 400px;
+  width: 100vw;  /* Ensures full page width */
+  min-height: 30rem; /* Ensures full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../../../../assets/about_us.svg') no-repeat center/cover;
-  background-size: cover; /* Ensures the SVG scales proportionally */
+  background: url('../../../../assets/about_us.svg') no-repeat center;
+  background-size: cover; 
   background-position: center;
+  left: 0;
+  right: 0;
 }
 
 .about-us-hero-content {
   position: relative;
   text-align: center;
   color: white;
+  padding: 1rem;
+  width: 100%;
 }
 
 .hero-heading {
@@ -29,6 +34,8 @@
 
 .hero-paragraph {
   font-size: 1.25rem; 
+  color: #e2e2e2; /* Darker shade for better readability */
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
