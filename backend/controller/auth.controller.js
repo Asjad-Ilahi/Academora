@@ -4,7 +4,6 @@ import { generateJwtToken } from '../util/generateJwtToken.js';
 import bcryptjs from 'bcryptjs';
 import crypto from 'crypto';
 
-
 export const signup = async (req, res) => {
     try {
         const { name, email, password } = req.body;

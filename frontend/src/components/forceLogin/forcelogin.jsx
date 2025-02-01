@@ -11,7 +11,7 @@ function ForceLogin() {
         <h2>Access Denied</h2>
         <p>You must be signed in to view this page.</p>
         <button className="login-button" onClick={() => navigate('/sign-up')}>
-          Go to Login
+          Go to SignUP
         </button>
       </div>
     </div>

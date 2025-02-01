@@ -6,6 +6,7 @@ import ArrowUp from '../../assets/arrowUp-bar.svg';
 import Bookmark from '../../assets/bookmark-bar.svg';
 import JoinSociety from '../../assets/joinSociety-bar.svg';
 import StudyCircles from '../../assets/studyCircle-bar.svg';
+import CreatePostIcon from '../../assets/plus.svg'; // Icon for Create Post
 
 function Sidebar() {
   const location = useLocation(); // Get current location
@@ -69,6 +70,16 @@ function Sidebar() {
             <img src={Bookmark} alt="Bookmark" />
           </span>
           Bookmark
+        </Link>
+        <Link
+          to="/create-post"
+          className={`menu-item ${activeItem === '/create-post' ? 'active' : ''}`}
+          onClick={() => handleItemClick('/create-post')}
+        >
+          <span className="icon">
+            <img src={CreatePostIcon} width={20} alt="Create Post" />
+          </span>
+          Create Post
         </Link>
       </nav>
     </aside>

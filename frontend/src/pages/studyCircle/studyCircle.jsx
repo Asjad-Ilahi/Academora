@@ -4,7 +4,7 @@ import JoinedSocieties from './components/join-studyCircles/join-studyCircles';
 import Recommended from './components/recommended/recommended';
 import SocietyPosts from '../../components/posts/post';
 
-export default function StudCircle() {
+export default function StudyCircle() {
   return (
     <Layout>
       <JoinedSocieties />

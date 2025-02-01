@@ -14,6 +14,7 @@ import Society from './pages/society/society';
 import BookmarksPage from './pages/bookmark/bookmark'; 
 import StudCircle from './pages/studyCircle/studyCircle';
 import EmailVerificationPage from './pages/emailVerification/emailVerification';
+import CreatePost from './pages/createPost/createPost';
 
 function AppContent() {
   const location = useLocation();
@@ -36,7 +37,8 @@ function AppContent() {
         <Route path="/society" element={<Society />} />
         <Route path="/bookmark" element={<BookmarksPage />} />
         <Route path="/emailVerification" element={<EmailVerificationPage />} />
-        <Route path="/study-circles" element={<StudCircle />} />
+        <Route path="/study-circles" element={<StudCircle  />} />
+        <Route path="/create-post" element={<CreatePost  />} />
       </Routes>
 
       {!hideNavAndFooter && <ChatBot />}
