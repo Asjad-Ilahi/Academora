@@ -3,12 +3,11 @@ import "./createPostMainContent.css";
 
 export function CreatePostMainContent() {
   const [description, setDescription] = useState("");
-  const [imagePreview, setImagePreview] = useState(null); // State to store image preview
+  const [imagePreview, setImagePreview] = useState(null); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Create a URL for the uploaded image
       const previewUrl = URL.createObjectURL(file);
       setImagePreview(previewUrl);
     }
@@ -46,7 +45,7 @@ export function CreatePostMainContent() {
           </label>
           <div className="file-upload">
             {imagePreview && <img src={imagePreview} alt="Preview" className="uploaded-image" />}
-            <span>Choose File</span>
+            <span className="chooseFile">Choose File</span>
             <input
               type="file"
               accept="image/*,video/*"

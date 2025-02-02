@@ -51,6 +51,7 @@
   textarea {
     min-height: 150px;
     resize: vertical;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
   
   .character-count {
@@ -86,9 +87,13 @@
     object-fit: contain;
     margin-top: 1rem;
   }
-  
+  .chooseFile{
+    color: #718096;
+    font-weight: 500;
+    font-size: 1rem;
+  }
   .post-button {
-    background: #7e22ce;
+    background: var(--primary-color);
     color: white;
     padding: 0.75rem 2rem;
     border: none;
