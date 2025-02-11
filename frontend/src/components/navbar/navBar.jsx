@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/store.jsx';
-import logo from '../../assets/logo.svg'; 
-import defaultProfileImage from '../../assets/women_avatar.svg'; 
+import logo from '../../assets/logo.svg';
+import defaultProfileImage from '../../assets/women_avatar.svg';
 
 import './navBar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const location = useLocation(); 
-  const { user, isAuthenticated, checkAuth, logout } = useAuthStore(); 
+  const location = useLocation();
+  const { user, isAuthenticated, checkAuth, logout } = useAuthStore();
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkAuth(); 
+    checkAuth();
   }, [checkAuth]);
 
   const toggleMenu = () => {
@@ -37,13 +37,13 @@ export default function Navbar() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setIsMenuOpen(false); 
+        setIsMenuOpen(false);
       }
     };
 
     window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize); 
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -102,8 +102,12 @@ export default function Navbar() {
                   className="profile-image"
                   onClick={toggleProfileMenu}
                 />
+
                 {isProfileMenuOpen && (
                   <div className="profile-menu">
+                    <Link to="/user-profile" className="profile-option" onClick={() => setIsProfileMenuOpen(false)}>
+                      View Profile
+                    </Link>
                     <button className="logout-button" onClick={handleLogout}>
                       Logout
                     </button>
@@ -121,6 +125,7 @@ export default function Navbar() {
               </>
             )}
           </div>
+
         </div>
       </div>
     </nav>

@@ -41,7 +41,6 @@ export const sendWelcomeEmail = async (email, name) => {
   }
 };
 
-
 export const sendResetPasswordEmail = async (email, name, resetLink) => {
     try {
         if (!email || !email.trim()) {

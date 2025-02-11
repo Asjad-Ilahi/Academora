@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./userSectionCreatePost.css";
-import wave from "../../../../assets/ethereal silky waves.svg";
-import placeholderUser from "../../../../assets/women_avatar.svg";
+import "./userHeader.css";
+import wave from "../../assets/ethereal silky waves.svg";
+import placeholderUser from "../../assets/women_avatar.svg";
 
-export function UserSectionCreatePost() {
+export function UserHeader() {
   const [userData, setUserData] = useState({
     username: "User-101", // Default username
     profileImage: placeholderUser, // Default profile image

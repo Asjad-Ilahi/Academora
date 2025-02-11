@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import AboutUs from './pages/aboutus/aboutUs';
+import UserProfile from './pages/userProfile/userProfile';
 import Universities from './pages/university/university';
 import { SignUpForm } from './pages/signup/signUp';
 import { LoginForm } from './pages/login/login';
@@ -33,7 +34,10 @@ function AppContent() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/sign-in" element={<LoginForm />} />
+        {/* <Route path="/about-us" element={<AboutUs />} /> */}
+
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/society" element={<Society />} />
         <Route path="/bookmark" element={<BookmarksPage />} />
         <Route path="/emailVerification" element={<EmailVerificationPage />} />

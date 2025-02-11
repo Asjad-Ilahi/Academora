@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use('/api/auth', router);
+app.use("/uploads", express.static("uploads"));
 app.listen(3001, () => {
     connectDB();
     console.log('Server is running on port 3001');
