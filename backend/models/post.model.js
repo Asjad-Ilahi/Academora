@@ -1,18 +1,34 @@
-import mongoose from "mongoose";
+import Post from "../models/post.model.js";
 
-const postSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  author: { type: String, required: true },
-  authorImage: { type: String, default: "" },
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  date: { type: Date, default: Date.now },
-  image: { type: String, default: null },
-  video: { type: String, default: null },
-  link: { type: String, default: null },
-  likes: { type: Number, default: 0 },
-  comments: { type: Number, default: 0 },
-});
+// Your createPost function
+export const createPost = async (req, res) => {
+  try {
+    const { title, description, link } = req.body;
+    const userId = req.user.id; // Assuming userId is set by verifyToken middleware
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-const Post = mongoose.model("Post", postSchema);
-export default Post;
+    // Handle file uploads
+    const image = req.files["image"] ? req.files["image"][0].path : null;
+    const video = req.files["video"] ? req.files["video"][0].path : null;
+
+    // Create a new post
+    const newPost = new Post({
+      userId,
+      author: user.fullName,
+      authorImage: user.profileImage,
+      title,
+      description,
+      image,
+      video,
+      link,
+    });
+
+    // Save the post to the database
+    await newPost.save();
+    res.status(201).json(newPost);  // Return the created post
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error.message });
+  }
+};

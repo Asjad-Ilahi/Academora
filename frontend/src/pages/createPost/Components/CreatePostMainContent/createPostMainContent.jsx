@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { uploadPost } from "../../../../../../backend/controller/post.controller";
 import "./createPostMainContent.css";
 
 export function CreatePostMainContent() {
@@ -38,6 +39,9 @@ export function CreatePostMainContent() {
     if (video) formData.append("video", video);
     formData.append("link", link);
 
+    await uploadPost(formData.title, formData.description, formData.image, formData.video, formData.link);
+    toast.success('Sign-up successful! Redirecting to email verification...');
+
     try {
       await axios.post("http://localhost:3001/api/posts/create", formData, {
         headers: {
@@ -45,6 +49,7 @@ export function CreatePostMainContent() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
+
       navigate("/profile");
     } catch (error) {
       console.error("Error creating post:", error);
